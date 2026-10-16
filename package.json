@@ -1,0 +1,44 @@
+{
+  "name": "intro.heyq02.com",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "rs build",
+    "check": "rs check && pnpm run typecheck",
+    "commitlint": "commitlint",
+    "dev": "rs dev",
+    "format": "rs fmt",
+    "format:check": "rs fmt --check",
+    "lint": "rs lint .",
+    "lint:fix": "rs lint --fix .",
+    "prepare": "rs hooks",
+    "preview": "rs preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "jingdong-lang-zheng-ti": "^1.0.2",
+    "motion": "^14.2.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "simple-icons": "^16.35.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.5.3",
+    "@heyq02/rstack-config": "0.0.6",
+    "@rsbuild/core": "^2.2.13",
+    "@rsbuild/plugin-react": "^2.1.1",
+    "@rsbuild/plugin-tailwindcss": "^2.0.3",
+    "@rslint/core": "^0.9.5",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "rstack": "^0.8.3",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3"
+  },
+  "packageManager": "pnpm@12.10.1",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "extends": "@heyq02/rstack-config/tsconfig/app",
+  "compilerOptions": {
+    "types": ["@rsbuild/core/types", "node"]
+  },
+  "include": ["src", "rstack.config.ts"]
+}
