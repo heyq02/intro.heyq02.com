@@ -1,0 +1,4 @@
+# Keep JoyCode's global post-commit when this repo owns hooksPath.
+if [ -x "$HOME/joycode/hooks/post-commit" ]; then
+  "$HOME/joycode/hooks/post-commit" "$@"
+fi

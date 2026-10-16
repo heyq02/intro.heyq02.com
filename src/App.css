@@ -1,0 +1,101 @@
+@import 'jingdong-lang-zheng-ti/JINGDONGLangZhengTi1-Regular';
+@import 'jingdong-lang-zheng-ti/JINGDONGLangZhengTi1-Semibold';
+@import 'jingdong-lang-zheng-ti/JINGDONGLangZhengTi2-Bold';
+@import 'tailwindcss';
+
+@theme {
+  --color-background: #f4f4f2;
+  --color-foreground: #242424;
+  --color-muted: #8a8a84;
+  --color-card: #ffffff;
+  --color-border: #e6e6e2;
+  --color-ring: var(--color-foreground);
+  --font-sans:
+    'JINGDONGLangZhengTi1-Regular', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-sans);
+  --spacing-section: 3.5rem;
+  --shadow-card:
+    0 1px 2px color-mix(in srgb, var(--color-foreground) 4%, transparent),
+    0 12px 32px color-mix(in srgb, var(--color-foreground) 5%, transparent);
+  --ease-out-quart: cubic-bezier(0.16, 1, 0.3, 1);
+  --default-transition-duration: 180ms;
+  --default-transition-timing-function: var(--ease-out-quart);
+  --transition-duration-slow: 420ms;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    scrollbar-gutter: stable;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    touch-action: manipulation;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 400;
+    font-synthesis: none;
+    line-height: 1.7;
+  }
+
+  a,
+  button {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 3px;
+  }
+}
+
+.resume-page {
+  --spacing-section: 2.25rem;
+}
+
+.resume-page h2 {
+  margin-bottom: 0.75rem;
+}
+
+.skill-brand {
+  fill: var(--color-foreground);
+  transition: fill var(--transition-duration-slow) var(--ease-out-quart);
+}
+
+.group:hover .skill-brand,
+.group:focus-within .skill-brand {
+  fill: var(--brand);
+}
+
+@layer utilities {
+  .font-medium {
+    font-family:
+      'JINGDONGLangZhengTi1-Semibold', ui-sans-serif, system-ui, sans-serif;
+    font-weight: 400;
+  }
+
+  .font-bold {
+    font-family:
+      'JINGDONGLangZhengTi2-Bold', 'JINGDONGLangZhengTi1-Semibold',
+      ui-sans-serif, system-ui, sans-serif;
+    font-weight: 400;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
