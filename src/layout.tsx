@@ -48,7 +48,7 @@ export function Page({
                 </p>
               ) : (
                 <a className="shrink-0 text-sm font-medium" href="/">
-                  贺永琪
+                  Ari · 贺
                 </a>
               )}
               <span aria-hidden="true" className="h-px flex-1 bg-accent/25" />
