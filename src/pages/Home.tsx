@@ -84,10 +84,10 @@ export function Home() {
                 className="py-3 first:pt-0 last:pb-0"
                 key={`${job.company}-${job.start}`}
               >
-                <div className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
-                  <h3 className="min-w-0 font-medium break-words">
+                <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
+                  <h3 className="flex min-w-0 flex-wrap items-center gap-1.5 font-medium">
                     <a
-                      className="transition-colors hover:text-accent"
+                      className="leading-none transition-colors hover:text-accent"
                       href={job.href}
                       rel="noopener noreferrer"
                       target="_blank"
@@ -95,7 +95,7 @@ export function Home() {
                       {job.company}
                     </a>
                     {job.intern ? (
-                      <span className="ml-2 inline-block rounded-full border border-accent/40 px-1.5 py-px text-[10px] leading-none font-medium text-accent align-middle">
+                      <span className="inline-flex h-4 shrink-0 items-center rounded-full border border-accent/40 px-1.5 text-[10px] leading-none text-accent">
                         实习
                       </span>
                     ) : null}
