@@ -13,7 +13,6 @@ export interface Place {
 export interface Experience {
   company: string;
   href: string;
-  role: string;
   start: string;
   end: string;
   summary: string;
@@ -76,7 +75,6 @@ export const experiences: Experience[] = [
   {
     company: '北京京东世纪贸易有限公司',
     href: 'https://www.jd.com/',
-    role: '软件开发',
     start: '2024.06',
     end: '至今',
     summary:

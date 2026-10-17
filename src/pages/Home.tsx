@@ -89,32 +89,6 @@ function markAbbr(mark: string) {
   return mark.slice(0, 2);
 }
 
-function companyFavicon(href: string) {
-  return new URL('/favicon.ico', href).href;
-}
-
-function CompanyLogo({ href }: { href: string }) {
-  const [failed, setFailed] = useState(false);
-
-  if (failed) {
-    return null;
-  }
-
-  return (
-    <img
-      alt=""
-      className="size-4 shrink-0 object-contain"
-      decoding="async"
-      height={16}
-      onError={() => {
-        setFailed(true);
-      }}
-      src={companyFavicon(href)}
-      width={16}
-    />
-  );
-}
-
 function PhoneIcon() {
   return (
     <svg
@@ -227,10 +201,9 @@ export function Home() {
                 key={`${job.company}-${job.start}`}
               >
                 <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
-                  <h3 className="flex min-w-0 flex-wrap items-center gap-1.5 text-base font-medium">
-                    <CompanyLogo href={job.href} />
+                  <h3 className="min-w-0 text-lg leading-6 font-medium">
                     <a
-                      className="min-w-0 leading-none transition-colors hover:text-accent"
+                      className="min-w-0 transition-colors hover:text-accent"
                       href={job.href}
                       rel="noopener noreferrer"
                       target="_blank"
@@ -242,8 +215,7 @@ export function Home() {
                     {job.start} – {job.end}
                   </p>
                 </div>
-                <p className="text-sm text-muted">{job.role}</p>
-                <p className="mt-2 text-base leading-7 text-pretty">
+                <p className="mt-3 text-sm leading-6 text-pretty text-muted">
                   {job.summary}
                 </p>
               </li>
@@ -282,9 +254,9 @@ export function Home() {
           className="lg:col-span-2 lg:col-start-2"
         >
           <SectionHeading id="code-heading" title="开源" />
-          <ul className="grid gap-x-8 sm:grid-cols-2">
+          <ul className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
             {projects.map((project) => (
-              <li className="py-3 first:pt-0 last:pb-0" key={project.name}>
+              <li key={project.name}>
                 <a
                   className="group block"
                   href={project.href}
@@ -293,7 +265,7 @@ export function Home() {
                 >
                   <span className="flex items-baseline justify-between gap-3">
                     <span
-                      className="font-medium break-words transition-colors group-hover:text-accent"
+                      className="text-lg leading-6 font-medium break-words transition-colors group-hover:text-accent"
                       translate="no"
                     >
                       {project.name}
@@ -305,7 +277,7 @@ export function Home() {
                       ↗
                     </span>
                   </span>
-                  <span className="mt-2 block text-base leading-7">
+                  <span className="mt-3 block text-sm leading-6 text-muted">
                     {project.summary}
                   </span>
                 </a>
