@@ -4,12 +4,14 @@ import type { SimpleIcon } from 'simple-icons';
 interface BrandIconProps {
   icon: SimpleIcon;
   colorOnHover?: boolean;
+  colored?: boolean;
   size?: 'sm' | 'md';
 }
 
 export function BrandIcon({
   icon,
   colorOnHover = false,
+  colored = false,
   size = 'sm',
 }: BrandIconProps) {
   const sizeClass = size === 'md' ? 'size-5' : 'size-3.5';
@@ -22,7 +24,9 @@ export function BrandIcon({
           ? `skill-brand ${sizeClass} shrink-0`
           : `${sizeClass} shrink-0`
       }
-      fill={colorOnHover ? undefined : 'currentColor'}
+      fill={
+        colored ? `#${icon.hex}` : colorOnHover ? undefined : 'currentColor'
+      }
       style={
         colorOnHover
           ? // CSSProperties has no index signature for custom properties.

@@ -73,7 +73,7 @@ export function Home() {
                 <li key={place.label}>
                   <a
                     aria-label={`${place.label} ${place.detail}`}
-                    className="text-accent transition-colors hover:text-foreground"
+                    className="transition-opacity hover:opacity-60"
                     href={place.href}
                     rel="noreferrer"
                     target={
@@ -81,7 +81,11 @@ export function Home() {
                     }
                     title={place.detail}
                   >
-                    {icon ? <BrandIcon icon={icon} size="md" /> : <MailIcon />}
+                    {icon ? (
+                      <BrandIcon colored icon={icon} size="md" />
+                    ) : (
+                      <MailIcon />
+                    )}
                   </a>
                 </li>
               );
