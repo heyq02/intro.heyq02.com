@@ -6,7 +6,7 @@ const pages = {
   index: {
     title: '永琪（Ari）',
     description:
-      '永琪（Ari），AI全栈研发。南京邮电大学生物医学工程本科毕业，专注前端工程化与 AI 业务落地。',
+      '永琪（Ari），全栈研发。南京邮电大学生物医学工程本科毕业，专注前端工程化与 AI 业务落地。',
   },
   blog: {
     title: '博客 · 永琪（Ari）',

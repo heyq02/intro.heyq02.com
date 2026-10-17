@@ -2,6 +2,10 @@ export interface Project {
   name: string;
   href: string;
   summary: string;
+  language: string;
+  languageColor: string;
+  stars: number;
+  forks: number;
 }
 
 export interface Place {
@@ -40,34 +44,22 @@ export const marks = [
 
 export const projects: Project[] = [
   {
+    name: 'jd-opensource/taro-ui',
+    href: 'https://github.com/jd-opensource/taro-ui',
+    summary: '一款基于 Taro 框架开发的多端 UI 组件库',
+    language: 'TypeScript',
+    languageColor: '#3178c6',
+    stars: 4730,
+    forks: 743,
+  },
+  {
     name: 'simpleicons.dev',
-    href: 'https://simpleicons.dev',
-    summary: '用一行 Markdown 嵌入技能图标。',
-  },
-  {
-    name: 'rspack-plugin-git-revision',
-    href: 'https://github.com/heyq02/rspack-plugin-git-revision',
-    summary: '构建时写入版本、提交、时间与分支。',
-  },
-  {
-    name: 'rspack-plugin-last-call',
-    href: 'https://github.com/heyq02/rspack-plugin-last-call',
-    summary: '在构建产物上增删改资源。',
-  },
-  {
-    name: 'rstack-config',
-    href: 'https://github.com/heyq02/rstack-config',
-    summary: 'Rstack 预设，按路径提供 lint、打包与格式化。',
-  },
-  {
-    name: 'rslint-config',
-    href: 'https://github.com/heyq02/rslint-config',
-    summary: 'Rslint 配置，包含规则与 import 排序。',
-  },
-  {
-    name: 'rslib-config',
-    href: 'https://github.com/heyq02/rslib-config',
-    summary: 'Rslib 的 ESM 库预设，生成类型声明并运行 publint。',
+    href: 'https://github.com/heyq02/simpleicons.dev',
+    summary: 'Showcase your skills on your GitHub readme or resumé with ease.',
+    language: 'TypeScript',
+    languageColor: '#3178c6',
+    stars: 171,
+    forks: 0,
   },
 ];
 

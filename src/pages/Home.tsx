@@ -15,7 +15,7 @@ import {
 } from '../site';
 
 const names = ['永琪', 'Ari'] as const;
-const nameSuffix = 'AI全栈研发';
+const nameSuffix = '，全栈研发';
 const typeDelay = 140;
 const deleteDelay = 100;
 const holdDelay = 2000;
@@ -108,6 +108,40 @@ function PhoneIcon() {
       viewBox="0 0 24 24"
     >
       <path d="M6.62 10.79a15.1 15.1 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.4 11.4 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.57 1 1 0 0 1-.25 1.02z" />
+    </svg>
+  );
+}
+
+function formatCount(count: number) {
+  if (count < 1000) {
+    return String(count);
+  }
+
+  return `${(count / 1000).toFixed(1).replace(/\.0$/, '')}k`;
+}
+
+function StarIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      className="size-[13px] shrink-0 opacity-70"
+      fill="currentColor"
+      viewBox="0 0 16 16"
+    >
+      <path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z" />
+    </svg>
+  );
+}
+
+function ForkIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      className="size-[13px] shrink-0 opacity-70"
+      fill="currentColor"
+      viewBox="0 0 16 16"
+    >
+      <path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.5.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z" />
     </svg>
   );
 }
@@ -264,31 +298,42 @@ export function Home() {
           className="lg:col-span-2 lg:col-start-2"
         >
           <SectionHeading id="code-heading" title="开源" />
-          <ul className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
+          <ul className="grid gap-3.5 sm:grid-cols-2">
             {projects.map((project) => (
-              <li key={project.name}>
+              <li className="min-w-0" key={project.name}>
                 <a
-                  className="group block"
+                  className="flex h-full flex-col rounded-[14px] border border-title/8 bg-background px-5 py-3 shadow-[0_1px_0_rgba(17,17,19,0.04),0_12px_28px_-6px_rgba(17,17,19,0.14)] transition-colors hover:border-title/16"
                   href={project.href}
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <span className="flex items-baseline justify-between gap-3">
-                    <span
-                      className="text-lg leading-6 font-medium break-words transition-colors group-hover:text-accent"
-                      translate="no"
-                    >
-                      {project.name}
-                    </span>
-                    <span
-                      aria-hidden="true"
-                      className="text-sm text-accent/70 transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none"
-                    >
-                      ↗
-                    </span>
+                  <span
+                    className="text-base leading-tight font-medium tracking-[-0.01em] break-words text-title"
+                    translate="no"
+                  >
+                    {project.name}
                   </span>
-                  <span className="mt-3 block text-sm leading-6 text-muted">
+                  <span className="mt-2 line-clamp-2 text-[13.5px] leading-[1.45] text-muted">
                     {project.summary}
+                  </span>
+                  <span className="mt-2 flex items-center gap-3 text-[13px] text-muted">
+                    <span className="flex items-center gap-1.5">
+                      <span
+                        className="size-2 rounded-full"
+                        style={{ backgroundColor: project.languageColor }}
+                      />
+                      {project.language}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <StarIcon />
+                      {formatCount(project.stars)}
+                    </span>
+                    {project.forks > 0 ? (
+                      <span className="flex items-center gap-1">
+                        <ForkIcon />
+                        {formatCount(project.forks)}
+                      </span>
+                    ) : null}
                   </span>
                 </a>
               </li>
