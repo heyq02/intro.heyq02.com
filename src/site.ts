@@ -22,7 +22,14 @@ export interface Experience {
 
 export const avatar = 'https://avatars.githubusercontent.com/u/206218794?v=4';
 
-export const marks = ['TypeScript', 'Vue', 'React', 'Taro', 'Rspack'];
+export const marks = [
+  'TypeScript',
+  'Vue',
+  'React',
+  'Vite',
+  'Spring Boot',
+  'GitHub Actions',
+];
 
 export const projects: Project[] = [
   {
