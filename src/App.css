@@ -4,12 +4,13 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-background: #f4f4f2;
-  --color-foreground: #242424;
-  --color-muted: #8a8a84;
-  --color-card: #ffffff;
-  --color-border: #e6e6e2;
-  --color-ring: var(--color-foreground);
+  --color-background: #f7f4ee;
+  --color-foreground: #1e2a3a;
+  --color-muted: #7a8494;
+  --color-accent: #2a6fbb;
+  --color-card: #fffdf9;
+  --color-border: #e4e0d6;
+  --color-ring: var(--color-accent);
   --font-sans:
     'JINGDONGLangZhengTi1-Regular', ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-sans);
@@ -55,10 +56,6 @@
 
 .resume-page {
   --spacing-section: 2.25rem;
-}
-
-.resume-page h2 {
-  margin-bottom: 0.75rem;
 }
 
 .skill-brand {
