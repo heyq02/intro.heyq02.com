@@ -26,6 +26,32 @@ function markAbbr(mark: string) {
   return mark.slice(0, 2);
 }
 
+function companyFavicon(href: string) {
+  return new URL('/favicon.ico', href).href;
+}
+
+function CompanyLogo({ href }: { href: string }) {
+  const [failed, setFailed] = useState(false);
+
+  if (failed) {
+    return null;
+  }
+
+  return (
+    <img
+      alt=""
+      className="size-4 shrink-0 object-contain"
+      decoding="async"
+      height={16}
+      onError={() => {
+        setFailed(true);
+      }}
+      src={companyFavicon(href)}
+      width={16}
+    />
+  );
+}
+
 function PhoneIcon() {
   return (
     <svg
@@ -141,8 +167,9 @@ export function Home() {
               >
                 <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
                   <h3 className="flex min-w-0 flex-wrap items-center gap-1.5 font-medium">
+                    <CompanyLogo href={job.href} />
                     <a
-                      className="leading-none transition-colors hover:text-accent"
+                      className="min-w-0 leading-none transition-colors hover:text-accent"
                       href={job.href}
                       rel="noopener noreferrer"
                       target="_blank"
