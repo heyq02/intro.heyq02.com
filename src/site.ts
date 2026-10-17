@@ -29,6 +29,7 @@ export const marks = [
   'Vite',
   'Spring Boot',
   'GitHub Actions',
+  'Expo',
 ];
 
 export const projects: Project[] = [
