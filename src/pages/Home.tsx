@@ -22,7 +22,7 @@ function MailIcon() {
   return (
     <svg
       aria-hidden="true"
-      className="size-3.5 shrink-0"
+      className="size-5 shrink-0"
       fill="currentColor"
       viewBox="0 0 24 24"
     >
@@ -65,7 +65,7 @@ export function Home() {
             AI 全栈研发，南京邮电大学生物医学工程本科毕业。专注前端工程化，推动
             AI 在业务场景中落地。
           </p>
-          <ul className="mt-5 flex flex-wrap gap-2">
+          <ul className="mt-5 flex flex-wrap items-center gap-4">
             {places.map((place) => {
               const icon = brandIcon(place.label);
 
@@ -73,7 +73,7 @@ export function Home() {
                 <li key={place.label}>
                   <a
                     aria-label={`${place.label} ${place.detail}`}
-                    className="flex size-9 items-center justify-center rounded-full border border-accent/40 text-accent transition-colors hover:border-accent hover:bg-accent hover:text-background"
+                    className="text-accent transition-colors hover:text-foreground"
                     href={place.href}
                     rel="noreferrer"
                     target={
@@ -81,7 +81,7 @@ export function Home() {
                     }
                     title={place.detail}
                   >
-                    {icon ? <BrandIcon icon={icon} /> : <MailIcon />}
+                    {icon ? <BrandIcon icon={icon} size="md" /> : <MailIcon />}
                   </a>
                 </li>
               );
