@@ -15,6 +15,7 @@ import {
 } from '../site';
 
 const names = ['永琪', 'Ari'] as const;
+const nameSuffix = 'AI全栈研发';
 const typeDelay = 140;
 const deleteDelay = 100;
 const holdDelay = 2000;
@@ -64,14 +65,23 @@ function TypedName() {
   }, [reduce]);
 
   if (reduce !== false) {
-    return <h1 className="brand-text text-h1 font-medium">永琪（Ari）</h1>;
+    return (
+      <h1 className="text-h1 font-medium whitespace-nowrap">
+        <span className="brand-text">永琪（Ari）</span>
+        <span className="text-title">{nameSuffix}</span>
+      </h1>
+    );
   }
 
   return (
-    <h1 aria-label="永琪（Ari）" className="text-h1 font-medium">
+    <h1
+      aria-label={`永琪（Ari）${nameSuffix}`}
+      className="text-h1 font-medium whitespace-nowrap"
+    >
       <span aria-hidden="true" className="brand-text name-caret">
         {text || '\u200b'}
       </span>
+      <span className="text-title">{nameSuffix}</span>
     </h1>
   );
 }
@@ -144,8 +154,8 @@ export function Home() {
           </div>
           <TypedName />
           <p className="mt-5 text-base leading-7 text-pretty">
-            AI 全栈研发，南京邮电大学生物医学工程本科毕业。专注前端工程化，推动
-            AI 在业务场景中落地。
+            南京邮电大学生物医学工程本科毕业。专注前端工程化，推动 AI
+            在业务场景中落地。
           </p>
           <ul className="mt-5 flex flex-wrap items-center gap-4">
             {places.map((place) => {
