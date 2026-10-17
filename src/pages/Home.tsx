@@ -46,9 +46,8 @@ export function Home() {
             />
           </div>
           <h1 className="text-3xl font-medium tracking-tight text-accent">
-            贺永琪
+            Ari · 贺
           </h1>
-          <p className="mt-1 text-sm text-muted">Ari</p>
           <p className="mt-3 text-sm leading-relaxed text-pretty">
             前端开发，南京邮电大学生物医学工程，编写 Rspack 插件与 Rstack 预设。
           </p>

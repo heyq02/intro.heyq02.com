@@ -4,13 +4,13 @@ import { rstack } from '@heyq02/rstack-config/rstack';
 
 const pages = {
   index: {
-    title: '贺永琪',
+    title: 'Ari · 贺',
     description:
-      '贺永琪，前端开发。南京邮电大学生物医学工程，编写 Rspack 插件与 Rstack 预设。',
+      'Ari · 贺，前端开发。南京邮电大学生物医学工程，编写 Rspack 插件与 Rstack 预设。',
   },
   blog: {
-    title: '博客 · 贺永琪',
-    description: '贺永琪的博客。',
+    title: '博客 · Ari · 贺',
+    description: 'Ari · 贺的博客。',
   },
 } as const;
 
