@@ -4,14 +4,15 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-background: #ffffff;
-  --color-foreground: #111113;
-  --color-muted: #646566;
+  --color-background: #fff;
+  --color-foreground: #242424;
+  --color-title: #111113;
+  --color-muted: #000000b3;
   --color-accent: #ff351a;
-  --color-accent-glow: #ef9bff;
+  --color-accent-glow: rgba(239, 155, 255, 1);
   --color-card: #f8f8f9;
-  --color-border: #e2e2e3;
-  --color-grid: #808080;
+  --color-border: #0000001f;
+  --color-grid: rgba(128, 128, 128, 0.1);
   --color-ring: var(--color-accent);
   --color-meteor-head: #12e5e5;
   --color-meteor-tail: #ff351a;
@@ -20,8 +21,15 @@
   --font-emphasis: 'JINGDONGLangZhengTi1-Semibold', var(--font-fallback);
   --font-strong: 'JINGDONGLangZhengTi2-Bold', var(--font-emphasis);
   --text-2xs: 0.625rem;
+  --text-h1: 2rem;
   --tracking-kicker: 0.22em;
   --tracking-heading: 0.18em;
+  --spacing-nav: 64px;
+  --spacing-page-x: 24px;
+  --spacing-page-x-md: 36px;
+  --spacing-page-x-xl: 80px;
+  --spacing-page-y: 48px;
+  --container-page: 1000px;
   --ease-out-quart: cubic-bezier(0.16, 1, 0.3, 1);
   --default-transition-duration: 180ms;
   --default-transition-timing-function: var(--ease-out-quart);

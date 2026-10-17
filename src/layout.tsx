@@ -19,35 +19,29 @@ const links: { id: SitePage; href: string; label: string }[] = [
 export function Page({
   page,
   children,
-  wide = false,
   kicker,
 }: {
   page: SitePage;
   children: ReactNode;
-  wide?: boolean;
   kicker?: string;
 }) {
   const reduce = useReducedMotion();
-  const width = wide ? 'max-w-5xl' : 'max-w-3xl';
-  const padding = wide ? 'py-6 sm:py-8' : 'py-12 sm:py-16';
 
   return (
     <LazyMotion features={domAnimation}>
       <MotionConfig reducedMotion="user" transition={{ ease: easeOutQuart() }}>
         <div className="relative min-h-dvh bg-background pt-[env(safe-area-inset-top)] pr-[env(safe-area-inset-right)] pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)] font-sans text-foreground">
           <MeteorsBackground />
-          <div className={`relative mx-auto px-5 sm:px-8 ${width} ${padding}`}>
+          <div className="relative mx-auto w-full max-w-page px-page-x py-page-y md:px-page-x-md xl:px-page-x-xl">
             <a
               className="sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:top-[max(1rem,env(safe-area-inset-top))] focus-visible:left-[max(1rem,env(safe-area-inset-left))] focus-visible:z-50 focus-visible:inline-block focus-visible:rounded-full focus-visible:bg-card focus-visible:px-3 focus-visible:py-1.5 focus-visible:text-sm"
               href="#main"
             >
               跳到正文
             </a>
-            <div className="mb-8 flex items-center justify-between sm:mb-10">
+            <div className="mb-8 flex min-h-nav items-center justify-between">
               {kicker ? (
-                <p className="text-xs font-medium tracking-kicker text-foreground">
-                  {kicker}
-                </p>
+                <p className="text-sm font-medium text-title">{kicker}</p>
               ) : (
                 <a className="text-sm font-medium" href="/">
                   Ari · 贺
@@ -56,7 +50,7 @@ export function Page({
               <m.nav
                 animate={{ opacity: 1 }}
                 aria-label="站点"
-                className="flex shrink-0 gap-4 text-sm"
+                className="flex shrink-0 gap-6 text-sm"
                 initial={reduce ? false : { opacity: 0 }}
                 transition={{ duration: reduce ? 0 : hoverDuration() }}
               >

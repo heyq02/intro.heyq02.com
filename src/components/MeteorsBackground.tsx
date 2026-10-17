@@ -143,7 +143,7 @@ function drawGrid(
   height: number,
   color: string,
 ) {
-  ctx.strokeStyle = withAlpha(color, 0.1);
+  ctx.strokeStyle = color;
   ctx.lineWidth = 1;
   ctx.beginPath();
 

@@ -89,7 +89,7 @@ export function Home() {
   }, []);
 
   return (
-    <Page kicker="PROFILE" page="home" wide>
+    <Page kicker="PROFILE" page="home">
       <div className="grid items-start gap-8 lg:grid-cols-[13.5rem_minmax(0,1fr)_11.5rem] lg:gap-x-12 lg:gap-y-10">
         <header className="lg:row-span-2">
           <div className="relative mb-5 w-fit">
@@ -105,10 +105,8 @@ export function Home() {
               width={128}
             />
           </div>
-          <h1 className="brand-text text-3xl font-medium tracking-tight">
-            Ari · 贺
-          </h1>
-          <p className="mt-3 text-sm leading-relaxed text-pretty">
+          <h1 className="brand-text text-h1 font-medium">Ari · 贺</h1>
+          <p className="mt-5 text-base leading-7 text-pretty">
             AI 全栈研发，南京邮电大学生物医学工程本科毕业。专注前端工程化，推动
             AI 在业务场景中落地。
           </p>
@@ -152,7 +150,7 @@ export function Home() {
               </a>
             </li>
           </ul>
-          <p className="mt-4 text-xs text-muted">
+          <p className="mt-5 text-sm text-muted">
             <time dateTime={time}>北京 {time}</time>
           </p>
         </header>
@@ -176,18 +174,13 @@ export function Home() {
                     >
                       {job.company}
                     </a>
-                    {job.intern ? (
-                      <span className="inline-flex h-4 shrink-0 items-center rounded-full border border-accent/40 px-1.5 text-2xs leading-none text-accent">
-                        实习
-                      </span>
-                    ) : null}
                   </h3>
-                  <p className="shrink-0 text-xs text-muted tabular-nums">
+                  <p className="shrink-0 text-sm text-muted tabular-nums">
                     {job.start} – {job.end}
                   </p>
                 </div>
-                <p className="text-xs text-muted">{job.role}</p>
-                <p className="mt-1 text-sm leading-relaxed text-pretty">
+                <p className="text-sm text-muted">{job.role}</p>
+                <p className="mt-5 text-base leading-7 text-pretty">
                   {job.summary}
                 </p>
               </li>
@@ -249,7 +242,7 @@ export function Home() {
                       ↗
                     </span>
                   </span>
-                  <span className="mt-0.5 block text-sm leading-snug text-muted">
+                  <span className="mt-1 block text-base leading-7 text-muted">
                     {project.summary}
                   </span>
                 </a>

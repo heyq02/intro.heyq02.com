@@ -17,7 +17,6 @@ export interface Experience {
   start: string;
   end: string;
   summary: string;
-  intern?: boolean;
 }
 
 export const avatar = 'https://avatars.githubusercontent.com/u/206218794?v=4';
@@ -82,24 +81,6 @@ export const experiences: Experience[] = [
     end: '至今',
     summary:
       '负责商家端财务、结算与发票，以及到店订详和家政运营后台。商家中心拆包后，编译时间缩短 65%，包体积减小 68%。',
-  },
-  {
-    company: '江苏群杰物联科技有限公司',
-    href: 'https://www.qunje.com/',
-    role: '前端开发工程师',
-    start: '2023.07',
-    end: '2024.02',
-    intern: true,
-    summary: '搭建政务版小程序前端，以 Vue 实现动态交互，并维护后台管理系统。',
-  },
-  {
-    company: '江苏汇鑫融智软件科技有限公司',
-    href: 'http://www.joinforwin.com/',
-    role: '前端开发工程师',
-    start: '2023.02',
-    end: '2023.07',
-    intern: true,
-    summary: '基于公司低代码平台二次开发后台管理页面。',
   },
 ];
 
