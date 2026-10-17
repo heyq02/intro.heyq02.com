@@ -94,6 +94,11 @@ export function Home() {
                     >
                       {job.company}
                     </a>
+                    {job.intern ? (
+                      <span className="ml-2 inline-block rounded-full border border-accent/40 px-1.5 py-px text-[10px] leading-none font-medium text-accent align-middle">
+                        实习
+                      </span>
+                    ) : null}
                   </h3>
                   <p className="shrink-0 text-xs text-muted tabular-nums">
                     {job.start} – {job.end}

@@ -17,6 +17,7 @@ export interface Experience {
   start: string;
   end: string;
   summary: string;
+  intern?: boolean;
 }
 
 export const avatar = 'https://avatars.githubusercontent.com/u/206218794?v=4';
@@ -72,6 +73,7 @@ export const experiences: Experience[] = [
     role: '前端开发工程师',
     start: '2023.07',
     end: '2024.02',
+    intern: true,
     summary: '搭建政务版小程序前端，以 Vue 实现动态交互，并维护后台管理系统。',
   },
   {
@@ -80,6 +82,7 @@ export const experiences: Experience[] = [
     role: '前端开发工程师',
     start: '2023.02',
     end: '2023.07',
+    intern: true,
     summary: '基于公司低代码平台二次开发后台管理页面。',
   },
 ];
