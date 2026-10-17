@@ -25,21 +25,14 @@ export interface Experience {
 export const avatar = 'https://avatars.githubusercontent.com/u/206218794?v=4';
 
 export const marks = [
-  'HTML',
-  'CSS',
-  'TypeScript',
   'Vue',
   'React',
   'Next',
-  'Vite',
-  'Vitest',
-  'Oxc',
-  'Git',
-  'GitHub Actions',
-  'GitHub Copilot',
-  'DeepSeek',
-  'Cursor',
-  'Claude',
+  'Spring',
+  'Redis',
+  'RabbitMQ',
+  'Nginx',
+  'Docker',
 ];
 
 export const projects: Project[] = [
