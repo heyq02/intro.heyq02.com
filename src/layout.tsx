@@ -44,7 +44,7 @@ export function Page({
                 <p className="text-sm font-medium text-title">{kicker}</p>
               ) : (
                 <a className="text-sm font-medium" href="/">
-                  Ari · 贺
+                  永琪（Ari）
                 </a>
               )}
               <m.nav

@@ -4,13 +4,13 @@ import { rstack } from '@heyq02/rstack-config/rstack';
 
 const pages = {
   index: {
-    title: 'Ari · 贺',
+    title: '永琪（Ari）',
     description:
-      'Ari · 贺，AI 全栈研发。南京邮电大学生物医学工程本科毕业，专注前端工程化与 AI 业务落地。',
+      '永琪（Ari），AI 全栈研发。南京邮电大学生物医学工程本科毕业，专注前端工程化与 AI 业务落地。',
   },
   blog: {
-    title: '博客 · Ari · 贺',
-    description: 'Ari · 贺的博客。',
+    title: '博客 · 永琪（Ari）',
+    description: '永琪（Ari）的博客。',
   },
 } as const;
 

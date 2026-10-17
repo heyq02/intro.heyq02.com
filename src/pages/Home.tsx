@@ -105,7 +105,7 @@ export function Home() {
               width={128}
             />
           </div>
-          <h1 className="brand-text text-h1 font-medium">Ari · 贺</h1>
+          <h1 className="brand-text text-h1 font-medium">永琪（Ari）</h1>
           <p className="mt-5 text-base leading-7 text-pretty">
             AI 全栈研发，南京邮电大学生物医学工程本科毕业。专注前端工程化，推动
             AI 在业务场景中落地。
