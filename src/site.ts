@@ -39,17 +39,17 @@ export const marks = [
 ];
 
 export const markSummary: Record<string, string> = {
-  Vue: '构建用户界面',
-  React: '构建用户界面',
-  Next: '构建 React 应用',
-  Rolldown: '打包前端资源',
-  Vite: '开发和构建前端',
-  Oxc: '编译 JavaScript',
-  Spring: '构建 Java 服务',
-  Redis: '缓存和存储数据',
-  RabbitMQ: '传递异步消息',
-  Nginx: '反向代理请求',
-  Docker: '容器化运行应用',
+  Vue: '渐进式 JavaScript 框架，用来构建 Web 界面',
+  React: '构建 Web 和原生用户界面的库',
+  Next: '面向 Web 的 React 框架',
+  Rolldown: '基于 Rust 的 JavaScript 打包器，API 兼容 Rollup',
+  Vite: '用来构建 Web 应用的前端构建工具',
+  Oxc: '用 Rust 编写的高性能 JavaScript 工具集',
+  Spring: '用来创建 Java 企业级应用',
+  Redis: '内存数据存储，可用作数据库、缓存和消息代理',
+  RabbitMQ: '开源的消息与流代理',
+  Nginx: 'HTTP 服务器、反向代理和负载均衡',
+  Docker: '开发、交付和运行应用的开放平台',
 };
 
 export const projects: Project[] = [

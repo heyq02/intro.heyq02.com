@@ -64,8 +64,8 @@ export function Page({
                       aria-current={current ? 'page' : undefined}
                       className={
                         current
-                          ? 'text-accent-text underline decoration-accent-text underline-offset-8'
-                          : 'text-muted transition-colors hover:text-accent-text'
+                          ? 'inline-flex h-6 items-center text-accent-text underline decoration-accent-text underline-offset-8'
+                          : 'inline-flex h-6 items-center text-muted transition-colors hover:text-accent-text'
                       }
                       href={link.href}
                       key={link.id}

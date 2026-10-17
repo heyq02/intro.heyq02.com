@@ -275,12 +275,12 @@ export function Home() {
                       <span className="pointer-events-none absolute top-full left-1/2 z-10 mt-2.5 -translate-x-1/2 rounded-md border border-title/8 bg-background opacity-0 shadow-md transition-opacity duration-150 group-hover:opacity-100 group-hover:delay-150 group-focus-visible:opacity-100">
                         <span className="flex items-center gap-3 px-3 py-2">
                           <BrandIcon colored icon={brand.icon} size="md" />
-                          <span className="flex flex-col">
-                            <span className="text-sm leading-5 font-medium whitespace-nowrap text-title">
+                          <span className="flex w-44 flex-col">
+                            <span className="text-sm leading-5 font-medium text-title">
                               {mark}
                             </span>
                             {markSummary[mark] ? (
-                              <span className="text-xs leading-4 whitespace-nowrap text-muted">
+                              <span className="text-xs leading-4 text-muted">
                                 {markSummary[mark]}
                               </span>
                             ) : null}
