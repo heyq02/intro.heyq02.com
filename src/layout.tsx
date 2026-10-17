@@ -44,7 +44,7 @@ export function Page({
                 <p className="text-sm font-medium text-title">{kicker}</p>
               ) : (
                 <a
-                  className="text-sm font-medium text-title transition-colors hover:text-accent"
+                  className="text-sm font-medium text-title transition-colors hover:text-accent-text"
                   href="/"
                 >
                   永琪（Ari）
@@ -64,8 +64,8 @@ export function Page({
                       aria-current={current ? 'page' : undefined}
                       className={
                         current
-                          ? 'text-accent underline decoration-accent underline-offset-8'
-                          : 'text-muted transition-colors hover:text-accent'
+                          ? 'text-accent-text underline decoration-accent-text underline-offset-8'
+                          : 'text-muted transition-colors hover:text-accent-text'
                       }
                       href={link.href}
                       key={link.id}

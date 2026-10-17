@@ -124,7 +124,7 @@ function StarIcon() {
   return (
     <svg
       aria-hidden="true"
-      className="size-[13px] shrink-0 opacity-70"
+      className="size-3.5 shrink-0"
       fill="currentColor"
       viewBox="0 0 16 16"
     >
@@ -137,7 +137,7 @@ function ForkIcon() {
   return (
     <svg
       aria-hidden="true"
-      className="size-[13px] shrink-0 opacity-70"
+      className="size-3.5 shrink-0"
       fill="currentColor"
       viewBox="0 0 16 16"
     >
@@ -202,7 +202,7 @@ export function Home() {
                 <li key={place.label}>
                   <a
                     aria-label={`${place.label} ${place.detail}`}
-                    className="transition-opacity hover:opacity-60"
+                    className="inline-flex size-6 items-center justify-center transition-opacity hover:opacity-60"
                     href={place.href}
                     rel="noreferrer"
                     target={
@@ -224,7 +224,7 @@ export function Home() {
             <li className="flex items-center gap-2">
               <MailIcon />
               <a
-                className="break-all transition-colors hover:text-accent"
+                className="break-all transition-colors hover:text-accent-text"
                 href={`mailto:${email}`}
               >
                 {email}
@@ -247,7 +247,7 @@ export function Home() {
                 <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
                   <h3 className="min-w-0 text-lg leading-6 font-medium">
                     <a
-                      className="min-w-0 transition-colors hover:text-accent"
+                      className="min-w-0 transition-colors hover:text-accent-text"
                       href={job.href}
                       rel="noopener noreferrer"
                       target="_blank"
@@ -308,15 +308,15 @@ export function Home() {
                   target="_blank"
                 >
                   <span
-                    className="text-base leading-tight font-medium tracking-[-0.01em] break-words text-title"
+                    className="text-lg leading-6 font-medium break-words text-title"
                     translate="no"
                   >
                     {project.name}
                   </span>
-                  <span className="mt-2 line-clamp-2 text-[13.5px] leading-[1.45] text-muted">
+                  <span className="mt-2 line-clamp-2 text-sm leading-6 text-muted">
                     {project.summary}
                   </span>
-                  <span className="mt-2 flex items-center gap-3 text-[13px] text-muted">
+                  <span className="mt-2 flex items-center gap-3 text-sm text-muted">
                     <span className="flex items-center gap-1.5">
                       <span
                         className="size-2 rounded-full"
