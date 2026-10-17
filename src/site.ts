@@ -18,32 +18,32 @@ export const projects: Project[] = [
   {
     name: 'simpleicons.dev',
     href: 'https://simpleicons.dev',
-    summary: '用一行 Markdown，把技能图标放进 README 或简历。',
+    summary: '用一行 Markdown 嵌入技能图标。',
   },
   {
     name: 'rspack-plugin-git-revision',
     href: 'https://github.com/heyq02/rspack-plugin-git-revision',
-    summary: '构建时写入版本号、提交哈希、时间和分支。',
+    summary: '构建时写入版本、提交、时间与分支。',
   },
   {
     name: 'rspack-plugin-last-call',
     href: 'https://github.com/heyq02/rspack-plugin-last-call',
-    summary: '在 Rspack 产物上跑最后一轮异步处理，可以改、加、删资源。',
+    summary: '在构建产物上增删改资源。',
   },
   {
     name: 'rstack-config',
     href: 'https://github.com/heyq02/rstack-config',
-    summary: '给 Rstack 的一套预设。lint、库打包和格式化按路径引用。',
+    summary: 'Rstack 预设，按路径提供 lint、打包与格式化。',
   },
   {
     name: 'rslint-config',
     href: 'https://github.com/heyq02/rslint-config',
-    summary: 'Rslint 的 flat config，规则和 import 排序收在一个入口里。',
+    summary: 'Rslint 配置，包含规则与 import 排序。',
   },
   {
     name: 'rslib-config',
     href: 'https://github.com/heyq02/rslib-config',
-    summary: 'Rslib 的 ESM 库预设，声明文件和 publint 跟着构建走。',
+    summary: 'Rslib 的 ESM 库预设，生成类型声明并运行 publint。',
   },
 ];
 

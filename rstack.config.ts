@@ -6,7 +6,7 @@ const pages = {
   index: {
     title: '贺永琪',
     description:
-      '贺永琪，前端开发。南京邮电大学生物医学工程，现于京东做商家中心，也在写 Rspack 插件和 Rstack 预设。',
+      '贺永琪，前端开发。南京邮电大学生物医学工程，编写 Rspack 插件与 Rstack 预设。',
   },
   resume: {
     title: '简历 · 贺永琪',
