@@ -203,7 +203,7 @@ export function Home() {
 
               return (
                 <li
-                  className="flex flex-col items-center gap-1.5 text-center"
+                  className="flex items-center justify-center"
                   key={mark}
                   translate="no"
                 >
@@ -214,9 +214,7 @@ export function Home() {
                       {markAbbr(mark)}
                     </span>
                   )}
-                  <span className="text-[11px] leading-tight text-muted">
-                    {mark}
-                  </span>
+                  <span className="sr-only">{mark}</span>
                 </li>
               );
             })}
