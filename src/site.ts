@@ -28,12 +28,29 @@ export const marks = [
   'Vue',
   'React',
   'Next',
+  'Rolldown',
+  'Vite',
+  'Oxc',
   'Spring',
   'Redis',
   'RabbitMQ',
   'Nginx',
   'Docker',
 ];
+
+export const markSummary: Record<string, string> = {
+  Vue: '构建用户界面',
+  React: '构建用户界面',
+  Next: '构建 React 应用',
+  Rolldown: '打包前端资源',
+  Vite: '开发和构建前端',
+  Oxc: '编译 JavaScript',
+  Spring: '构建 Java 服务',
+  Redis: '缓存和存储数据',
+  RabbitMQ: '传递异步消息',
+  Nginx: '反向代理请求',
+  Docker: '容器化运行应用',
+};
 
 export const projects: Project[] = [
   {
@@ -94,5 +111,10 @@ export const places: Place[] = [
     label: 'Juejin',
     href: 'https://juejin.cn/user/708557910842296',
     detail: '编程糕手Ari',
+  },
+  {
+    label: 'WeChat',
+    href: '/wechat.jpg',
+    detail: '扫码添加',
   },
 ];

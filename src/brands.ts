@@ -28,6 +28,7 @@ import {
   siRabbitmq,
   siReact,
   siRedis,
+  siRolldown,
   siRust,
   siSpring,
   siSpringboot,
@@ -37,6 +38,7 @@ import {
   siVitest,
   siVuedotjs,
   siWebpack,
+  siWechat,
   siX,
 } from 'simple-icons';
 
@@ -69,6 +71,7 @@ const brands: { name: string; href: string; icon?: SimpleIcon }[] = [
   { name: 'Expo', href: 'https://expo.dev/', icon: siExpo },
   { name: 'Taro', href: 'https://docs.taro.zone/' },
   { name: 'Webpack', href: 'https://webpack.js.org/', icon: siWebpack },
+  { name: 'Rolldown', href: 'https://rolldown.rs/', icon: siRolldown },
   { name: 'Vite', href: 'https://vite.dev/', icon: siVite },
   { name: 'Vitest', href: 'https://vitest.dev/', icon: siVitest },
   { name: 'Oxc', href: 'https://oxc.rs/', icon: siOxc },
@@ -111,6 +114,7 @@ const brands: { name: string; href: string; icon?: SimpleIcon }[] = [
   { name: 'DeepSeek', href: 'https://www.deepseek.com/', icon: siDeepseek },
   { name: 'Claude', href: 'https://claude.ai/', icon: siClaude },
   { name: 'X', href: 'https://x.com/', icon: siX },
+  { name: 'WeChat', href: 'https://weixin.qq.com/', icon: siWechat },
   { name: 'Bilibili', href: 'https://www.bilibili.com/', icon: siBilibili },
   { name: 'Juejin', href: 'https://juejin.cn/', icon: siJuejin },
 ];

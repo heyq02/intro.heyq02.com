@@ -1,6 +1,6 @@
 import { useReducedMotion } from 'motion/react';
 import { useEffect, useState } from 'react';
-import { brandIcon } from '../brands';
+import { brandIcon, brandOf } from '../brands';
 import { BrandIcon } from '../components/BrandIcon';
 import { SectionHeading } from '../components/SectionHeading';
 import { Page } from '../layout';
@@ -9,6 +9,7 @@ import {
   email,
   experiences,
   marks,
+  markSummary,
   phone,
   places,
   projects,
@@ -187,9 +188,7 @@ export function Home() {
                     className="inline-flex size-6 items-center justify-center transition-opacity hover:opacity-60"
                     href={place.href}
                     rel="noreferrer"
-                    target={
-                      place.href.startsWith('http') ? '_blank' : undefined
-                    }
+                    target="_blank"
                     title={place.detail}
                   >
                     <BrandIcon colored icon={icon} size="md" />
@@ -252,7 +251,7 @@ export function Home() {
           <SectionHeading id="skills-heading" title="技能" />
           <ul className="grid grid-cols-3 gap-x-2 gap-y-4">
             {marks.map((mark) => {
-              const icon = brandIcon(mark);
+              const brand = brandOf(mark);
 
               return (
                 <li
@@ -260,14 +259,40 @@ export function Home() {
                   key={mark}
                   translate="no"
                 >
-                  {icon ? (
-                    <BrandIcon colored icon={icon} size="md" />
+                  {brand?.href && brand.icon ? (
+                    <a
+                      aria-label={
+                        markSummary[mark]
+                          ? `${mark}，${markSummary[mark]}`
+                          : mark
+                      }
+                      className="group relative z-0 inline-flex size-9 items-center justify-center rounded-lg border border-transparent transition-[background-color,border-color] duration-150 ease-out hover:z-10 hover:border-title/12 hover:bg-title/8 focus-visible:z-10"
+                      href={brand.href}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <BrandIcon colored icon={brand.icon} size="md" />
+                      <span className="pointer-events-none absolute top-full left-1/2 z-10 mt-2.5 -translate-x-1/2 rounded-md border border-title/8 bg-background opacity-0 shadow-md transition-opacity duration-150 group-hover:opacity-100 group-hover:delay-150 group-focus-visible:opacity-100">
+                        <span className="flex items-center gap-3 px-3 py-2">
+                          <BrandIcon colored icon={brand.icon} size="md" />
+                          <span className="flex flex-col">
+                            <span className="text-sm leading-5 font-medium whitespace-nowrap text-title">
+                              {mark}
+                            </span>
+                            {markSummary[mark] ? (
+                              <span className="text-xs leading-4 whitespace-nowrap text-muted">
+                                {markSummary[mark]}
+                              </span>
+                            ) : null}
+                          </span>
+                        </span>
+                      </span>
+                    </a>
                   ) : (
                     <span className="text-xs font-medium">
                       {markAbbr(mark)}
                     </span>
                   )}
-                  <span className="sr-only">{mark}</span>
                 </li>
               );
             })}
