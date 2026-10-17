@@ -95,7 +95,7 @@ export function Home() {
           <div className="relative mb-5 w-fit">
             <span
               aria-hidden="true"
-              className="absolute top-2 left-2 size-28 rounded-full bg-accent/15 sm:size-32"
+              className="absolute top-2 left-2 size-28 rounded-full bg-meteor-head/20 sm:size-32"
             />
             <img
               alt=""
@@ -105,7 +105,7 @@ export function Home() {
               width={128}
             />
           </div>
-          <h1 className="text-3xl font-medium tracking-tight text-accent">
+          <h1 className="brand-text text-3xl font-medium tracking-tight">
             Ari · 贺
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-pretty">

@@ -43,17 +43,16 @@ export function Page({
             >
               跳到正文
             </a>
-            <div className="mb-8 flex items-center gap-4 sm:mb-10">
+            <div className="mb-8 flex items-center justify-between sm:mb-10">
               {kicker ? (
-                <p className="shrink-0 text-xs font-medium tracking-kicker text-accent">
+                <p className="text-xs font-medium tracking-kicker text-foreground">
                   {kicker}
                 </p>
               ) : (
-                <a className="shrink-0 text-sm font-medium" href="/">
+                <a className="text-sm font-medium" href="/">
                   Ari · 贺
                 </a>
               )}
-              <span aria-hidden="true" className="h-px flex-1 bg-accent/25" />
               <m.nav
                 animate={{ opacity: 1 }}
                 aria-label="站点"

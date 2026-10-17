@@ -189,12 +189,12 @@ export function MeteorsBackground() {
     const observer = new ResizeObserver(resize);
     observer.observe(canvas);
 
-    const foreground = tokenColor('--color-foreground');
+    const grid = tokenColor('--color-grid');
     const head = tokenColor('--color-meteor-head');
     const tail = tokenColor('--color-meteor-tail');
 
     if (reduced) {
-      drawGrid(ctx, size.width, size.height, foreground);
+      drawGrid(ctx, size.width, size.height, grid);
       return () => observer.disconnect();
     }
 
@@ -203,7 +203,7 @@ export function MeteorsBackground() {
 
     const animate = () => {
       ctx.clearRect(0, 0, size.width, size.height);
-      drawGrid(ctx, size.width, size.height, foreground);
+      drawGrid(ctx, size.width, size.height, grid);
       for (const meteor of meteors) {
         meteor.update();
         meteor.draw(ctx, head, tail);
