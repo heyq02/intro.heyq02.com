@@ -180,15 +180,13 @@ export function Home() {
                   key={mark}
                   translate="no"
                 >
-                  <span className="flex size-12 items-center justify-center rounded-full border border-accent/40 text-accent">
-                    {icon ? (
-                      <BrandIcon icon={icon} size="md" />
-                    ) : (
-                      <span className="text-xs font-medium">
-                        {markAbbr(mark)}
-                      </span>
-                    )}
-                  </span>
+                  {icon ? (
+                    <BrandIcon colored icon={icon} size="md" />
+                  ) : (
+                    <span className="text-xs font-medium">
+                      {markAbbr(mark)}
+                    </span>
+                  )}
                   <span className="text-[11px] leading-tight text-muted">
                     {mark}
                   </span>
