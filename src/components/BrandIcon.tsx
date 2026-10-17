@@ -4,14 +4,23 @@ import type { SimpleIcon } from 'simple-icons';
 interface BrandIconProps {
   icon: SimpleIcon;
   colorOnHover?: boolean;
+  size?: 'sm' | 'md';
 }
 
-export function BrandIcon({ icon, colorOnHover = false }: BrandIconProps) {
+export function BrandIcon({
+  icon,
+  colorOnHover = false,
+  size = 'sm',
+}: BrandIconProps) {
+  const sizeClass = size === 'md' ? 'size-5' : 'size-3.5';
+
   return (
     <svg
       aria-hidden="true"
       className={
-        colorOnHover ? 'skill-brand size-3.5 shrink-0' : 'size-3.5 shrink-0'
+        colorOnHover
+          ? `skill-brand ${sizeClass} shrink-0`
+          : `${sizeClass} shrink-0`
       }
       fill={colorOnHover ? undefined : 'currentColor'}
       style={
