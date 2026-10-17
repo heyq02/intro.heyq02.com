@@ -177,7 +177,7 @@ export function Home() {
                       {job.company}
                     </a>
                     {job.intern ? (
-                      <span className="inline-flex h-4 shrink-0 items-center rounded-full border border-accent/40 px-1.5 text-[10px] leading-none text-accent">
+                      <span className="inline-flex h-4 shrink-0 items-center rounded-full border border-accent/40 px-1.5 text-2xs leading-none text-accent">
                         实习
                       </span>
                     ) : null}

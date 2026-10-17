@@ -11,13 +11,13 @@
   --color-card: #fffdf9;
   --color-border: #e4e0d6;
   --color-ring: var(--color-accent);
-  --font-sans:
-    'JINGDONGLangZhengTi1-Regular', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-sans);
-  --spacing-section: 3.5rem;
-  --shadow-card:
-    0 1px 2px color-mix(in srgb, var(--color-foreground) 4%, transparent),
-    0 12px 32px color-mix(in srgb, var(--color-foreground) 5%, transparent);
+  --font-fallback: ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'JINGDONGLangZhengTi1-Regular', var(--font-fallback);
+  --font-emphasis: 'JINGDONGLangZhengTi1-Semibold', var(--font-fallback);
+  --font-strong: 'JINGDONGLangZhengTi2-Bold', var(--font-emphasis);
+  --text-2xs: 0.625rem;
+  --tracking-kicker: 0.22em;
+  --tracking-heading: 0.18em;
   --ease-out-quart: cubic-bezier(0.16, 1, 0.3, 1);
   --default-transition-duration: 180ms;
   --default-transition-timing-function: var(--ease-out-quart);
@@ -66,15 +66,12 @@
 
 @layer utilities {
   .font-medium {
-    font-family:
-      'JINGDONGLangZhengTi1-Semibold', ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-emphasis);
     font-weight: 400;
   }
 
   .font-bold {
-    font-family:
-      'JINGDONGLangZhengTi2-Bold', 'JINGDONGLangZhengTi1-Semibold',
-      ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-strong);
     font-weight: 400;
   }
 }

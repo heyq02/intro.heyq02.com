@@ -32,7 +32,7 @@ export function Page({
 
   return (
     <LazyMotion features={domAnimation}>
-      <MotionConfig reducedMotion="user" transition={{ ease: easeOutQuart }}>
+      <MotionConfig reducedMotion="user" transition={{ ease: easeOutQuart() }}>
         <div className="min-h-dvh bg-background pt-[env(safe-area-inset-top)] pr-[env(safe-area-inset-right)] pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)] font-sans text-foreground">
           <div className={`mx-auto px-5 sm:px-8 ${width} ${padding}`}>
             <a
@@ -43,7 +43,7 @@ export function Page({
             </a>
             <div className="mb-8 flex items-center gap-4 sm:mb-10">
               {kicker ? (
-                <p className="shrink-0 text-xs font-medium tracking-[0.22em] text-accent">
+                <p className="shrink-0 text-xs font-medium tracking-kicker text-accent">
                   {kicker}
                 </p>
               ) : (
@@ -57,7 +57,7 @@ export function Page({
                 aria-label="站点"
                 className="flex shrink-0 gap-4 text-sm"
                 initial={reduce ? false : { opacity: 0 }}
-                transition={{ duration: reduce ? 0 : hoverDuration }}
+                transition={{ duration: reduce ? 0 : hoverDuration() }}
               >
                 {links.map((link) => {
                   const current = page === link.id;

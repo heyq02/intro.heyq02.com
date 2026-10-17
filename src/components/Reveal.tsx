@@ -17,9 +17,9 @@ export function Reveal({ children, className, delay = 0 }: RevealProps) {
       className={className}
       initial={reduce ? false : { opacity: 0, y: 8 }}
       transition={{
-        duration: reduce ? 0 : riseDuration,
+        duration: reduce ? 0 : riseDuration(),
         delay: reduce ? 0 : delay,
-        ease: easeOutQuart,
+        ease: easeOutQuart(),
       }}
     >
       {children}
