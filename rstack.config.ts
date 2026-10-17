@@ -6,7 +6,7 @@ const pages = {
   index: {
     title: 'Ari · 贺',
     description:
-      'Ari · 贺，前端开发。南京邮电大学生物医学工程，编写 Rspack 插件与 Rstack 预设。',
+      'Ari · 贺，AI 全栈研发。南京邮电大学生物医学工程本科毕业，专注前端工程化与 AI 业务落地。',
   },
   blog: {
     title: '博客 · Ari · 贺',

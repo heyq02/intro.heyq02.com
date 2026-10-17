@@ -49,7 +49,8 @@ export function Home() {
             Ari · 贺
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-pretty">
-            前端开发，南京邮电大学生物医学工程，编写 Rspack 插件与 Rstack 预设。
+            AI 全栈研发，南京邮电大学生物医学工程本科毕业。专注前端工程化，推动
+            AI 在业务场景中落地。
           </p>
           <dl className="mt-5 grid grid-cols-[4.75rem_minmax(0,1fr)] gap-x-3 gap-y-1.5 text-sm">
             {places.map((place) => (
