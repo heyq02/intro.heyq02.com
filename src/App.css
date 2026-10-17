@@ -54,10 +54,6 @@
   }
 }
 
-.resume-page {
-  --spacing-section: 2.25rem;
-}
-
 .skill-brand {
   fill: var(--color-foreground);
   transition: fill var(--transition-duration-slow) var(--ease-out-quart);

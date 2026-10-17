@@ -8,34 +8,27 @@ import {
 import type { ReactNode } from 'react';
 import { easeOutQuart, hoverDuration } from './motion';
 
-export type SitePage = 'home' | 'resume' | 'blog';
+export type SitePage = 'home' | 'blog';
 
 const links: { id: SitePage; href: string; label: string }[] = [
   { id: 'home', href: '/', label: '首页' },
-  { id: 'resume', href: '/resume/', label: '简历' },
   { id: 'blog', href: '/blog/', label: '博客' },
 ];
 
 export function Page({
   page,
   children,
-  dense = false,
   wide = false,
   kicker,
 }: {
   page: SitePage;
   children: ReactNode;
-  dense?: boolean;
   wide?: boolean;
   kicker?: string;
 }) {
   const reduce = useReducedMotion();
   const width = wide ? 'max-w-5xl' : 'max-w-3xl';
-  const padding = dense
-    ? 'resume-page py-8 sm:py-10'
-    : wide
-      ? 'py-6 sm:py-8'
-      : 'py-12 sm:py-16';
+  const padding = wide ? 'py-6 sm:py-8' : 'py-12 sm:py-16';
 
   return (
     <LazyMotion features={domAnimation}>
