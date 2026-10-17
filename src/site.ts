@@ -61,7 +61,7 @@ export const experiences: Experience[] = [
   {
     company: '北京京东世纪贸易有限公司',
     href: 'https://www.jd.com/',
-    role: '软件开发工程师（前端）',
+    role: '软件开发',
     start: '2024.06',
     end: '至今',
     summary:
