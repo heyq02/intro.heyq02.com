@@ -19,7 +19,7 @@ export interface Experience {
   href: string;
   start: string;
   end: string;
-  summary: string;
+  points: string[];
 }
 
 export const avatar = 'https://avatars.githubusercontent.com/u/206218794?v=4';
@@ -69,8 +69,11 @@ export const experiences: Experience[] = [
     href: 'https://www.jd.com/',
     start: '2024.06',
     end: '至今',
-    summary:
-      '负责商家端财务、结算与发票，以及到店订详和家政运营后台。商家中心拆包后，编译时间缩短 65%，包体积减小 68%。',
+    points: [
+      '负责京东外卖跨端小程序&H5、管理后台需求迭代',
+      '进行管理后台老旧架构升级，TP95性能优化',
+      '本地生活产研C3层面 AI Infra 建设，提升研发效能',
+    ],
   },
 ];
 

@@ -86,15 +86,6 @@ function TypedName() {
   );
 }
 
-function beijingClock(date: Date) {
-  return new Intl.DateTimeFormat('zh-CN', {
-    timeZone: 'Asia/Shanghai',
-    hour: '2-digit',
-    minute: '2-digit',
-    hourCycle: 'h23',
-  }).format(date);
-}
-
 function markAbbr(mark: string) {
   return mark.slice(0, 2);
 }
@@ -160,15 +151,6 @@ function MailIcon() {
 }
 
 export function Home() {
-  const [time, setTime] = useState(() => beijingClock(new Date()));
-
-  useEffect(() => {
-    const id = window.setInterval(() => {
-      setTime(beijingClock(new Date()));
-    }, 30_000);
-    return () => window.clearInterval(id);
-  }, []);
-
   return (
     <Page kicker="PROFILE" page="home">
       <div className="grid items-start gap-8 lg:grid-cols-[13.5rem_minmax(0,1fr)_11.5rem] lg:gap-x-12 lg:gap-y-10">
@@ -231,9 +213,6 @@ export function Home() {
               </a>
             </li>
           </ul>
-          <p className="mt-5 text-sm text-muted">
-            <time dateTime={time}>北京 {time}</time>
-          </p>
         </header>
 
         <section aria-labelledby="work-heading">
@@ -259,9 +238,11 @@ export function Home() {
                     {job.start} – {job.end}
                   </p>
                 </div>
-                <p className="mt-3 text-sm leading-6 text-pretty text-muted">
-                  {job.summary}
-                </p>
+                <ul className="mt-3 list-disc space-y-1 pl-4 text-sm leading-6 text-pretty text-muted">
+                  {job.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
               </li>
             ))}
           </ul>
