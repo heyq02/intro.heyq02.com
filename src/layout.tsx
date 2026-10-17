@@ -20,10 +20,12 @@ export function Page({
   page,
   children,
   dense = false,
+  compact = false,
 }: {
   page: SitePage;
   children: ReactNode;
   dense?: boolean;
+  compact?: boolean;
 }) {
   const reduce = useReducedMotion();
 
@@ -32,7 +34,7 @@ export function Page({
       <MotionConfig reducedMotion="user" transition={{ ease: easeOutQuart }}>
         <div className="min-h-dvh bg-background pt-[env(safe-area-inset-top)] pr-[env(safe-area-inset-right)] pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)] font-sans text-foreground">
           <div
-            className={`mx-auto max-w-3xl px-5 sm:px-6 ${dense ? 'resume-page py-10 sm:py-12' : 'py-12 sm:py-16'}`}
+            className={`mx-auto max-w-3xl px-5 sm:px-6 ${dense ? 'resume-page py-10 sm:py-12' : compact ? 'pt-6 pb-2 sm:py-8' : 'py-12 sm:py-16'}`}
           >
             <a
               className="sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:top-[max(1rem,env(safe-area-inset-top))] focus-visible:left-[max(1rem,env(safe-area-inset-left))] focus-visible:z-50 focus-visible:inline-block focus-visible:rounded-full focus-visible:bg-card focus-visible:px-3 focus-visible:py-1.5 focus-visible:text-sm focus-visible:shadow-card"
@@ -43,7 +45,7 @@ export function Page({
             <m.nav
               animate={{ opacity: 1 }}
               aria-label="站点"
-              className="mb-section flex flex-wrap gap-2 text-sm"
+              className={`${compact ? 'mb-4 sm:mb-6' : 'mb-section'} flex flex-wrap gap-2 text-sm`}
               initial={reduce ? false : { opacity: 0 }}
               transition={{ duration: reduce ? 0 : hoverDuration }}
             >
