@@ -18,6 +18,19 @@ function markAbbr(mark: string) {
   return mark.slice(0, 2);
 }
 
+function MailIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      className="size-3.5 shrink-0"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
+    </svg>
+  );
+}
+
 export function Home() {
   const [time, setTime] = useState(() => beijingClock(new Date()));
 
@@ -52,25 +65,28 @@ export function Home() {
             AI 全栈研发，南京邮电大学生物医学工程本科毕业。专注前端工程化，推动
             AI 在业务场景中落地。
           </p>
-          <dl className="mt-5 grid grid-cols-[4.75rem_minmax(0,1fr)] gap-x-3 gap-y-1.5 text-sm">
-            {places.map((place) => (
-              <div className="contents" key={place.label}>
-                <dt className="text-muted">{place.label}</dt>
-                <dd className="min-w-0">
+          <ul className="mt-5 flex flex-wrap gap-2">
+            {places.map((place) => {
+              const icon = brandIcon(place.label);
+
+              return (
+                <li key={place.label}>
                   <a
-                    className="break-words transition-colors hover:text-accent"
+                    aria-label={`${place.label} ${place.detail}`}
+                    className="flex size-9 items-center justify-center rounded-full border border-accent/40 text-accent transition-colors hover:border-accent hover:bg-accent hover:text-background"
                     href={place.href}
                     rel="noreferrer"
                     target={
                       place.href.startsWith('http') ? '_blank' : undefined
                     }
+                    title={place.detail}
                   >
-                    {place.detail}
+                    {icon ? <BrandIcon icon={icon} /> : <MailIcon />}
                   </a>
-                </dd>
-              </div>
-            ))}
-          </dl>
+                </li>
+              );
+            })}
+          </ul>
           <p className="mt-4 text-xs text-muted">
             <time dateTime={time}>北京 {time}</time>
           </p>
