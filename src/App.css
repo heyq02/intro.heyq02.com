@@ -11,6 +11,8 @@
   --color-card: #fffdf9;
   --color-border: #e4e0d6;
   --color-ring: var(--color-accent);
+  --color-meteor-head: #12e5e5;
+  --color-meteor-tail: #ff351a;
   --font-fallback: ui-sans-serif, system-ui, sans-serif;
   --font-sans: 'JINGDONGLangZhengTi1-Regular', var(--font-fallback);
   --font-emphasis: 'JINGDONGLangZhengTi1-Semibold', var(--font-fallback);

@@ -159,7 +159,7 @@ export function Home() {
 
         <section aria-labelledby="work-heading">
           <SectionHeading id="work-heading" title="经历" />
-          <ul className="divide-y divide-border">
+          <ul>
             {experiences.map((job) => (
               <li
                 className="py-3 first:pt-0 last:pb-0"
@@ -228,7 +228,7 @@ export function Home() {
           <SectionHeading id="code-heading" title="开源" />
           <ul className="grid gap-x-8 sm:grid-cols-2">
             {projects.map((project) => (
-              <li className="border-b border-border py-2.5" key={project.name}>
+              <li className="py-2.5" key={project.name}>
                 <a
                   className="group block"
                   href={project.href}

@@ -6,6 +6,7 @@ import {
   useReducedMotion,
 } from 'motion/react';
 import type { ReactNode } from 'react';
+import { MeteorsBackground } from './components/MeteorsBackground';
 import { easeOutQuart, hoverDuration } from './motion';
 
 export type SitePage = 'home' | 'blog';
@@ -33,8 +34,9 @@ export function Page({
   return (
     <LazyMotion features={domAnimation}>
       <MotionConfig reducedMotion="user" transition={{ ease: easeOutQuart() }}>
-        <div className="min-h-dvh bg-background pt-[env(safe-area-inset-top)] pr-[env(safe-area-inset-right)] pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)] font-sans text-foreground">
-          <div className={`mx-auto px-5 sm:px-8 ${width} ${padding}`}>
+        <div className="relative min-h-dvh bg-background pt-[env(safe-area-inset-top)] pr-[env(safe-area-inset-right)] pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)] font-sans text-foreground">
+          <MeteorsBackground />
+          <div className={`relative mx-auto px-5 sm:px-8 ${width} ${padding}`}>
             <a
               className="sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:top-[max(1rem,env(safe-area-inset-top))] focus-visible:left-[max(1rem,env(safe-area-inset-left))] focus-visible:z-50 focus-visible:inline-block focus-visible:rounded-full focus-visible:bg-card focus-visible:px-3 focus-visible:py-1.5 focus-visible:text-sm"
               href="#main"
