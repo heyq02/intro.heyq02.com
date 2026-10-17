@@ -77,6 +77,30 @@
   color: transparent;
 }
 
+.name-caret {
+  border-right: 2px solid transparent;
+  margin-right: -2px;
+  animation: blink-caret 1s cubic-bezier(1, 0, 0, 1) infinite;
+}
+
+@keyframes blink-caret {
+  from,
+  49% {
+    border-image: linear-gradient(
+        to bottom,
+        var(--color-accent),
+        var(--color-accent-glow),
+        var(--color-meteor-head)
+      )
+      1;
+  }
+
+  50%,
+  to {
+    border-image: linear-gradient(to bottom, transparent, transparent) 1;
+  }
+}
+
 .skill-brand {
   fill: var(--color-foreground);
   transition: fill var(--transition-duration-slow) var(--ease-out-quart);

@@ -1,3 +1,4 @@
+import { useReducedMotion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { brandIcon } from '../brands';
 import { BrandIcon } from '../components/BrandIcon';
@@ -12,6 +13,68 @@ import {
   places,
   projects,
 } from '../site';
+
+const names = ['永琪', 'Ari'] as const;
+const typeDelay = 140;
+const deleteDelay = 100;
+const holdDelay = 2000;
+
+function TypedName() {
+  const reduce = useReducedMotion();
+  const [text, setText] = useState('');
+
+  useEffect(() => {
+    if (reduce !== false) {
+      return;
+    }
+
+    let wordIndex = 0;
+    let length = 0;
+    let deleting = false;
+    let timer = 0;
+
+    const tick = () => {
+      const word = names[wordIndex] ?? '';
+
+      if (!deleting) {
+        length += 1;
+        setText(word.slice(0, length));
+        if (length === word.length) {
+          deleting = true;
+          timer = window.setTimeout(tick, holdDelay);
+          return;
+        }
+        timer = window.setTimeout(tick, typeDelay);
+        return;
+      }
+
+      length -= 1;
+      setText(word.slice(0, Math.max(length, 0)));
+      if (length === 0) {
+        deleting = false;
+        wordIndex = (wordIndex + 1) % names.length;
+        timer = window.setTimeout(tick, typeDelay);
+        return;
+      }
+      timer = window.setTimeout(tick, deleteDelay);
+    };
+
+    timer = window.setTimeout(tick, typeDelay);
+    return () => window.clearTimeout(timer);
+  }, [reduce]);
+
+  if (reduce !== false) {
+    return <h1 className="brand-text text-h1 font-medium">永琪（Ari）</h1>;
+  }
+
+  return (
+    <h1 aria-label="永琪（Ari）" className="text-h1 font-medium">
+      <span aria-hidden="true" className="brand-text name-caret">
+        {text || '\u200b'}
+      </span>
+    </h1>
+  );
+}
 
 function beijingClock(date: Date) {
   return new Intl.DateTimeFormat('zh-CN', {
@@ -105,7 +168,7 @@ export function Home() {
               width={128}
             />
           </div>
-          <h1 className="brand-text text-h1 font-medium">永琪（Ari）</h1>
+          <TypedName />
           <p className="mt-5 text-base leading-7 text-pretty">
             AI 全栈研发，南京邮电大学生物医学工程本科毕业。专注前端工程化，推动
             AI 在业务场景中落地。
