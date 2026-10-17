@@ -3,7 +3,15 @@ import { brandIcon } from '../brands';
 import { BrandIcon } from '../components/BrandIcon';
 import { SectionHeading } from '../components/SectionHeading';
 import { Page } from '../layout';
-import { avatar, experiences, marks, places, projects } from '../site';
+import {
+  avatar,
+  email,
+  experiences,
+  marks,
+  phone,
+  places,
+  projects,
+} from '../site';
 
 function beijingClock(date: Date) {
   return new Intl.DateTimeFormat('zh-CN', {
@@ -18,11 +26,24 @@ function markAbbr(mark: string) {
   return mark.slice(0, 2);
 }
 
+function PhoneIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      className="size-4 shrink-0"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path d="M6.62 10.79a15.1 15.1 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.4 11.4 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.57 1 1 0 0 1-.25 1.02z" />
+    </svg>
+  );
+}
+
 function MailIcon() {
   return (
     <svg
       aria-hidden="true"
-      className="size-5 shrink-0"
+      className="size-4 shrink-0"
       fill="currentColor"
       viewBox="0 0 24 24"
     >
@@ -68,6 +89,9 @@ export function Home() {
           <ul className="mt-5 flex flex-wrap items-center gap-4">
             {places.map((place) => {
               const icon = brandIcon(place.label);
+              if (!icon) {
+                return null;
+              }
 
               return (
                 <li key={place.label}>
@@ -81,15 +105,26 @@ export function Home() {
                     }
                     title={place.detail}
                   >
-                    {icon ? (
-                      <BrandIcon colored icon={icon} size="md" />
-                    ) : (
-                      <MailIcon />
-                    )}
+                    <BrandIcon colored icon={icon} size="md" />
                   </a>
                 </li>
               );
             })}
+          </ul>
+          <ul className="mt-4 grid gap-2 text-sm">
+            <li className="flex items-center gap-2">
+              <PhoneIcon />
+              <span>{phone}</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <MailIcon />
+              <a
+                className="break-all transition-colors hover:text-accent"
+                href={`mailto:${email}`}
+              >
+                {email}
+              </a>
+            </li>
           </ul>
           <p className="mt-4 text-xs text-muted">
             <time dateTime={time}>北京 {time}</time>
