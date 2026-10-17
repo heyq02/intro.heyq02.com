@@ -95,16 +95,15 @@ export const experiences: Experience[] = [
   },
 ];
 
+export const phone = '+86 135****8086';
+
+export const email = 'hello@heyq02.com';
+
 export const places: Place[] = [
   {
     label: 'GitHub',
     href: 'https://github.com/heyq02',
     detail: 'heyq02',
-  },
-  {
-    label: '邮件',
-    href: 'mailto:mail@heyq02.cn',
-    detail: 'mail@heyq02.cn',
   },
   {
     label: 'X',
