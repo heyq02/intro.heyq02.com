@@ -14,20 +14,18 @@ export function BlogPage() {
               文章写在这个站点里。现在还没有篇目。
             </p>
           ) : (
-            <div className="divide-y divide-border">
+            <div>
               {posts.map((post) => (
-                <article className="py-5 first:pt-0" key={post.slug}>
+                <article className="py-3 first:pt-0 last:pb-0" key={post.slug}>
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-                    <h3 className="min-w-0 text-2xl font-medium break-words">
+                    <h3 className="min-w-0 text-base font-medium break-words">
                       {post.title}
                     </h3>
                     <p className="text-sm text-muted tabular-nums">
                       {post.date}
                     </p>
                   </div>
-                  <p className="mt-5 text-base leading-7 text-muted">
-                    {post.summary}
-                  </p>
+                  <p className="mt-2 text-base leading-7">{post.summary}</p>
                 </article>
               ))}
             </div>

@@ -164,7 +164,7 @@ export function Home() {
                 key={`${job.company}-${job.start}`}
               >
                 <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
-                  <h3 className="flex min-w-0 flex-wrap items-center gap-1.5 font-medium">
+                  <h3 className="flex min-w-0 flex-wrap items-center gap-1.5 text-base font-medium">
                     <CompanyLogo href={job.href} />
                     <a
                       className="min-w-0 leading-none transition-colors hover:text-accent"
@@ -180,7 +180,7 @@ export function Home() {
                   </p>
                 </div>
                 <p className="text-sm text-muted">{job.role}</p>
-                <p className="mt-5 text-base leading-7 text-pretty">
+                <p className="mt-2 text-base leading-7 text-pretty">
                   {job.summary}
                 </p>
               </li>
@@ -221,7 +221,7 @@ export function Home() {
           <SectionHeading id="code-heading" title="开源" />
           <ul className="grid gap-x-8 sm:grid-cols-2">
             {projects.map((project) => (
-              <li className="py-2.5" key={project.name}>
+              <li className="py-3 first:pt-0 last:pb-0" key={project.name}>
                 <a
                   className="group block"
                   href={project.href}
@@ -242,7 +242,7 @@ export function Home() {
                       ↗
                     </span>
                   </span>
-                  <span className="mt-1 block text-base leading-7 text-muted">
+                  <span className="mt-2 block text-base leading-7">
                     {project.summary}
                   </span>
                 </a>

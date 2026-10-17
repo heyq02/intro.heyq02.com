@@ -43,7 +43,10 @@ export function Page({
               {kicker ? (
                 <p className="text-sm font-medium text-title">{kicker}</p>
               ) : (
-                <a className="text-sm font-medium" href="/">
+                <a
+                  className="text-sm font-medium text-title transition-colors hover:text-accent"
+                  href="/"
+                >
                   永琪（Ari）
                 </a>
               )}
@@ -62,7 +65,7 @@ export function Page({
                       className={
                         current
                           ? 'text-accent underline decoration-accent underline-offset-8'
-                          : 'text-muted transition-colors hover:text-foreground'
+                          : 'text-muted transition-colors hover:text-accent'
                       }
                       href={link.href}
                       key={link.id}
