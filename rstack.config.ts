@@ -8,10 +8,6 @@ const pages = {
     description:
       '贺永琪，前端开发。南京邮电大学生物医学工程，编写 Rspack 插件与 Rstack 预设。',
   },
-  resume: {
-    title: '简历 · 贺永琪',
-    description: '贺永琪的简历：经历、项目、技能与教育。',
-  },
   blog: {
     title: '博客 · 贺永琪',
     description: '贺永琪的博客。',
@@ -44,7 +40,6 @@ define.extends([
         source: {
           entry: {
             index: './src/index.tsx',
-            resume: './src/resume.tsx',
             blog: './src/blog.tsx',
           },
         },

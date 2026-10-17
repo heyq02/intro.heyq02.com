@@ -3,7 +3,7 @@ import { brandIcon } from '../brands';
 import { BrandIcon } from '../components/BrandIcon';
 import { SectionHeading } from '../components/SectionHeading';
 import { Page } from '../layout';
-import { avatar, marks, places, projects } from '../site';
+import { avatar, experiences, marks, places, projects } from '../site';
 
 function beijingClock(date: Date) {
   return new Intl.DateTimeFormat('zh-CN', {
@@ -30,8 +30,8 @@ export function Home() {
 
   return (
     <Page kicker="PROFILE" page="home" wide>
-      <div className="grid items-start gap-8 lg:grid-cols-[13.5rem_minmax(0,1fr)_11.5rem] lg:gap-12">
-        <header>
+      <div className="grid items-start gap-8 lg:grid-cols-[13.5rem_minmax(0,1fr)_11.5rem] lg:gap-x-12 lg:gap-y-10">
+        <header className="lg:row-span-2">
           <div className="relative mb-5 w-fit">
             <span
               aria-hidden="true"
@@ -76,35 +76,33 @@ export function Home() {
           </p>
         </header>
 
-        <section aria-labelledby="code-heading">
-          <SectionHeading id="code-heading" title="开源" />
+        <section aria-labelledby="work-heading">
+          <SectionHeading id="work-heading" title="经历" />
           <ul className="divide-y divide-border">
-            {projects.map((project) => (
-              <li className="py-2.5 first:pt-0 last:pb-0" key={project.name}>
-                <a
-                  className="group block"
-                  href={project.href}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <span className="flex items-baseline justify-between gap-3">
-                    <span
-                      className="font-medium break-words transition-colors group-hover:text-accent"
-                      translate="no"
+            {experiences.map((job) => (
+              <li
+                className="py-3 first:pt-0 last:pb-0"
+                key={`${job.company}-${job.start}`}
+              >
+                <div className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
+                  <h3 className="min-w-0 font-medium break-words">
+                    <a
+                      className="transition-colors hover:text-accent"
+                      href={job.href}
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
-                      {project.name}
-                    </span>
-                    <span
-                      aria-hidden="true"
-                      className="text-sm text-accent/70 transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none"
-                    >
-                      ↗
-                    </span>
-                  </span>
-                  <span className="mt-0.5 block text-sm leading-snug text-muted">
-                    {project.summary}
-                  </span>
-                </a>
+                      {job.company}
+                    </a>
+                  </h3>
+                  <p className="shrink-0 text-xs text-muted tabular-nums">
+                    {job.start} – {job.end}
+                  </p>
+                </div>
+                <p className="text-xs text-muted">{job.role}</p>
+                <p className="mt-1 text-sm leading-relaxed text-pretty">
+                  {job.summary}
+                </p>
               </li>
             ))}
           </ul>
@@ -137,6 +135,43 @@ export function Home() {
                 </li>
               );
             })}
+          </ul>
+        </section>
+
+        <section
+          aria-labelledby="code-heading"
+          className="lg:col-span-2 lg:col-start-2"
+        >
+          <SectionHeading id="code-heading" title="开源" />
+          <ul className="grid gap-x-8 sm:grid-cols-2">
+            {projects.map((project) => (
+              <li className="border-b border-border py-2.5" key={project.name}>
+                <a
+                  className="group block"
+                  href={project.href}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <span className="flex items-baseline justify-between gap-3">
+                    <span
+                      className="font-medium break-words transition-colors group-hover:text-accent"
+                      translate="no"
+                    >
+                      {project.name}
+                    </span>
+                    <span
+                      aria-hidden="true"
+                      className="text-sm text-accent/70 transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none"
+                    >
+                      ↗
+                    </span>
+                  </span>
+                  <span className="mt-0.5 block text-sm leading-snug text-muted">
+                    {project.summary}
+                  </span>
+                </a>
+              </li>
+            ))}
           </ul>
         </section>
       </div>
