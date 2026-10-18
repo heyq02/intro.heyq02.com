@@ -75,7 +75,7 @@ export const projects: Project[] = [
 
 export const experiences: Experience[] = [
   {
-    company: 'Beijing Jingdong Century Trading Co., Ltd.',
+    company: 'JD.com, Inc.',
     href: 'https://www.jd.com/',
     start: '2024.06',
     end: 'Present',

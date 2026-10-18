@@ -82,7 +82,7 @@ With `prefers-reduced-motion`, show `贺永琪 (Ari He), Full-stack Engineer` an
 
 ## Experience
 
-One entry: Beijing Jingdong Century Trading Co., Ltd. No logo, no job title. The company name links to the site in a new tab. Dates use `tabular-nums`.
+One entry: JD.com, Inc. No logo, no job title. The company name links to the site in a new tab. Dates use `tabular-nums`.
 
 Points are a 14px disc list.
 
