@@ -12,8 +12,8 @@ import { easeOutQuart, hoverDuration } from './motion';
 export type SitePage = 'home' | 'blog';
 
 const links: { id: SitePage; href: string; label: string }[] = [
-  { id: 'home', href: '/', label: '首页' },
-  { id: 'blog', href: '/blog/', label: '博客' },
+  { id: 'home', href: '/', label: 'Home' },
+  { id: 'blog', href: '/blog/', label: 'Blog' },
 ];
 
 export function Page({
@@ -37,7 +37,7 @@ export function Page({
               className="sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:top-[max(1rem,env(safe-area-inset-top))] focus-visible:left-[max(1rem,env(safe-area-inset-left))] focus-visible:z-50 focus-visible:inline-block focus-visible:rounded-full focus-visible:bg-card focus-visible:px-3 focus-visible:py-1.5 focus-visible:text-sm"
               href="#main"
             >
-              跳到正文
+              Skip to content
             </a>
             <div className="mb-8 flex min-h-nav items-center justify-between">
               {kicker ? (
@@ -47,12 +47,12 @@ export function Page({
                   className="text-sm font-medium text-title transition-colors hover:text-accent-text"
                   href="/"
                 >
-                  永琪（Ari）
+                  贺永琪 (Ari He)
                 </a>
               )}
               <m.nav
                 animate={{ opacity: 1 }}
-                aria-label="站点"
+                aria-label="Site"
                 className="flex shrink-0 gap-6 text-sm"
                 initial={reduce ? false : { opacity: 0 }}
                 transition={{ duration: reduce ? 0 : hoverDuration() }}

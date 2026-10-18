@@ -1,145 +1,148 @@
 # Design
 
-个人介绍站，只有浅色。视觉基准是 [Lynx](https://lynxjs.org/zh/) 的文档内容盒，不是它的首页横幅，也不是带侧栏的文档壳。
+Personal site, light theme only. The visual baseline is the [Lynx](https://lynxjs.org/zh/) document content box, not its homepage banner and not the sidebar documentation shell.
 
-后续改动先改 `src/App.css` 的 `@theme`，再改组件。动效时长从 CSS 变量读，不在 JS 里另写一套。
+Change tokens in `src/App.css` `@theme` first, then components. Motion durations are read from CSS variables. Do not duplicate them in JS.
 
-## 从 Lynx 留下的
+## Taken from Lynx
 
-内容盒最大宽度 1000px，含左右内边距。内边距：≥1280 为 80，≤1279 为 36，≤768 为 24；上下 48。导航高 64px，导航项间距 24px。正文 16px，行高 1.7。一级标题 32px。页头和正文共用这一层内边距。
+Content box max width is 1000px, including horizontal padding. Padding: 80 at ≥1280, 36 at ≤1279, 24 at ≤768; vertical padding is 48. Nav height is 64px. Nav item gap is 24px. Body text is 16px with line-height 1.7. The level-one heading is 32px. The header and the content share this padding.
 
-强调色 `#ff351a`，辅色 `#12e5e5`，渐变中段 `rgba(239, 155, 255, 1)`，标题色 `#111113`。
+Accent `#ff351a`, secondary `#12e5e5`, gradient mid-stop `rgba(239, 155, 255, 1)`, title `#111113`.
 
-这些不要搬过来：首页 56px 营销标题、960px 特性栅格、1015/500 断点、侧栏公式 `max((100vw - 1000 - 320 - 268) / 2, 20px)`。本站没有侧栏和大纲。
+Leave these behind: the 56px marketing title, the 960px feature grid, the 1015/500 breakpoints, and the sidebar formula `max((100vw - 1000 - 320 - 268) / 2, 20px)`. This site has no sidebar and no outline.
 
-## 颜色
+## Color
 
-| 令牌                  | 值                         | 用途                                                                            |
-| --------------------- | -------------------------- | ------------------------------------------------------------------------------- |
-| `--color-background`  | `#fff`                     | 页面底                                                                          |
-| `--color-foreground`  | `#242424`                  | 正文                                                                            |
-| `--color-title`       | `#111113`                  | 标题、强调字                                                                    |
-| `--color-muted`       | `#000000b3`                | 次级文字。已经带 0.7 透明度，图标上不要再叠 `opacity-70`                        |
-| `--color-accent`      | `#ff351a`                  | 装饰：分区下划线、焦点环、姓名渐变、流星尾。白底对比约 3.6:1，不用作 14px 正文  |
-| `--color-accent-text` | `#d62d16`                  | 小字强调、当前导航、链接悬停。白底对比约 4.9:1                                  |
-| `--color-accent-glow` | `rgba(239, 155, 255, 1)`   | 渐变中段                                                                        |
-| `--color-card`        | `#f8f8f9`                  | 备用表面                                                                        |
-| `--color-border`      | `#0000001f`                | 备用描边                                                                        |
-| `--color-grid`        | `rgba(128, 128, 128, 0.1)` | 背景网格。必须是这个 rgba。写成 `#808080` 会被 Tailwind 算成 `gray`，网格会发黑 |
-| `--color-meteor-head` | `#12e5e5`                  | 流星头                                                                          |
-| `--color-meteor-tail` | `#ff351a`                  | 流星尾                                                                          |
-| `--color-ring`        | `var(--color-accent)`      | `:focus-visible` 轮廓，2px，偏移 3px                                            |
+| Token                 | Value                      | Use                                                                                                               |
+| --------------------- | -------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `--color-background`  | `#fff`                     | Page background                                                                                                   |
+| `--color-foreground`  | `#242424`                  | Body text                                                                                                         |
+| `--color-title`       | `#111113`                  | Titles                                                                                                            |
+| `--color-muted`       | `#000000b3`                | Secondary text. Already 0.7 alpha. Do not add `opacity-70` on icons                                               |
+| `--color-accent`      | `#ff351a`                  | Decoration: section underline, focus ring, name gradient, meteor tail. About 3.6:1 on white, so not for 14px text |
+| `--color-accent-text` | `#d62d16`                  | Small emphasized text, current nav item, link hover. About 4.9:1 on white                                         |
+| `--color-accent-glow` | `rgba(239, 155, 255, 1)`   | Gradient mid-stop                                                                                                 |
+| `--color-card`        | `#f8f8f9`                  | Spare surface                                                                                                     |
+| `--color-border`      | `#0000001f`                | Spare border                                                                                                      |
+| `--color-grid`        | `rgba(128, 128, 128, 0.1)` | Background grid. Keep this rgba. `#808080` is computed as `gray` by Tailwind and the grid turns black             |
+| `--color-meteor-head` | `#12e5e5`                  | Meteor head                                                                                                       |
+| `--color-meteor-tail` | `#ff351a`                  | Meteor tail                                                                                                       |
+| `--color-ring`        | `var(--color-accent)`      | `:focus-visible` outline, 2px, offset 3px                                                                         |
 
-`--color-accent` 本身不加深，否则姓名渐变会一起变暗。
+Do not darken `--color-accent`. The name gradient uses it directly.
 
-## 字体
+## Type
 
-京东朗正体，不换。
+Keep the Jingdong Langzheng faces.
 
-- 正文：`JINGDONGLangZhengTi1-Regular`
-- `.font-medium`：`JINGDONGLangZhengTi1-Semibold`，`font-weight: 400`
-- `.font-bold`：`JINGDONGLangZhengTi2-Bold`，`font-weight: 400`
+- Body: `JINGDONGLangZhengTi1-Regular`
+- `.font-medium`: `JINGDONGLangZhengTi1-Semibold` at `font-weight: 400`
+- `.font-bold`: `JINGDONGLangZhengTi2-Bold` at `font-weight: 400`
 - `font-synthesis: none`
 
-回退：`ui-sans-serif, system-ui, sans-serif`。
+Fallback: `ui-sans-serif, system-ui, sans-serif`.
 
-## 字号
+## Scale
 
-全站就这一档，卡片标题和公司名同一级，说明和元信息同一级。
+One scale. Card titles match the company name. Descriptions match meta text.
 
-| 角色                           | 规格                                                   |
-| ------------------------------ | ------------------------------------------------------ |
-| 姓名                           | 32px（`--text-h1`），中等字重，单行                    |
-| 分区标题                       | 22px / 1.3，中等字重，底部 1px `--color-accent` 下划线 |
-| 公司名、仓库名                 | 18px / 24px，中等字重                                  |
-| 简介                           | 16px / 28px                                            |
-| 经历条目、日期、仓库说明、星标 | 14px / 24px，`--color-muted`                           |
-| 悬浮卡标题                     | 14px / 20px，中等字重                                  |
-| 悬浮卡说明                     | 12px / 16px，`--color-muted`，可折成两行               |
-| 页眉小标、导航                 | 14px                                                   |
+| Role                                          | Spec                                                      |
+| --------------------------------------------- | --------------------------------------------------------- |
+| Name                                          | 32px (`--text-h1`), medium weight                         |
+| Section title                                 | 22px / 1.3, medium weight, 1px `--color-accent` underline |
+| Company, repo name                            | 18px / 24px, medium weight                                |
+| Bio                                           | 16px / 28px                                               |
+| Experience points, dates, repo summary, stars | 14px / 24px, `--color-muted`                              |
+| Tooltip title                                 | 14px / 20px, medium weight                                |
+| Tooltip description                           | 12px / 16px, `--color-muted`, may wrap to two lines       |
+| Kicker, nav                                   | 14px                                                      |
 
-## 版式
+## Layout
 
-`lg`（1024px）起三列：`13.5rem`、弹性中栏、`11.5rem`，列距 48px，行距 40px。更窄时改成单列，间距 32px。
+From `lg` (1024px): `13.5rem`, a flexible middle column, `11.5rem`. Column gap 48px, row gap 40px. Below that, one column with 32px gaps.
 
-- 左栏：头像、姓名、简介、社交、电话、邮箱。左栏宽度保持 `13.5rem`，不要为姓名加宽。
-- 中栏：经历。开源从中栏起，横跨中栏和右栏。
-- 右栏：技能，三列图标。
+- Left: avatar, name, bio, social, phone, email. Keep this column at `13.5rem`.
+- Middle: experience. Open source starts in the middle column and spans the right column too.
+- Right: skills, a 3-column icon grid.
 
-头像 112px，`sm` 起 128px，圆形，4px 白色环，背后一圈 `--color-meteor-head` 20% 的光。
+Avatar is 112px, 128px from `sm`, circular, 4px white ring, with a `--color-meteor-head` glow at 20% behind it.
 
-## 姓名
+The English role does not fit beside the name in the `13.5rem` column, so it sits on the next line at 18px. The accessible name keeps the comma: `贺永琪 (Ari He), Full-stack Engineer`.
 
-可见名称是「永琪（Ari）」。页标题和博客页头链接用这个全名。Bilibili 昵称「全栈糕手Ari」、掘金昵称「编程糕手Ari」保持原样。
+## Name
 
-打字：从空开始，打「永琪」，停 2s，删掉，打「Ari」，停 2s，删掉，循环。打字 140ms，删除 100ms。只给打出来的名字加渐变和闪烁光标。后面固定跟着「，全栈研发」，纯 `--color-title`，不带「AI」。
+The visible Chinese name is 贺永琪. Page titles and the blog header link use `贺永琪 (Ari He)`. Bilibili (`全栈糕手Ari`) and Juejin (`编程糕手Ari`) stay as the account names.
 
-渐变方向 270deg：强调色、光晕、青色、光晕、强调色。
+Typing starts empty, types 贺永琪, holds 2s, deletes, types Ari He, holds 2s, deletes, and loops. Typing is 140ms, deleting is 100ms. Only the typed name gets the gradient and the caret. The static line under it is `Full-stack Engineer` in `--color-title`.
 
-`prefers-reduced-motion` 时静态显示「永琪（Ari），全栈研发」，没有光标。`aria-label` 始终是全名。`useReducedMotion()` 只有在返回 `false` 时才播放。
+Gradient direction is 270deg: accent, glow, cyan, glow, accent.
 
-## 经历
+With `prefers-reduced-motion`, show `贺永琪 (Ari He), Full-stack Engineer` and no caret. `aria-label` is always the full name. `useReducedMotion()` animates only when it returns `false`.
 
-只保留北京京东世纪贸易有限公司。没有公司徽标，没有职位。公司名可点到官网，新标签打开。日期用 `tabular-nums`。
+## Experience
 
-条目用 14px 圆点列表。现有三句保持用户原文，不改写。
+One entry: Beijing Jingdong Century Trading Co., Ltd. No logo, no job title. The company name links to the site in a new tab. Dates use `tabular-nums`.
 
-## 开源
+Points are a 14px disc list.
 
-只展示 GitHub 置顶的两个仓库：`jd-opensource/taro-ui`、`heyq02/simpleicons.dev`。数据写在 `src/site.ts`，不在运行时请求。
+## Open source
 
-信息参照 GitHub 置顶卡：仓库名、说明、语言色点、星标，fork 为 0 时不显示。外观参照 Lynx 的选项卡，不做成 GitHub 组件。
+Only the two pinned GitHub repos: `jd-opensource/taro-ui` and `heyq02/simpleicons.dev`. Data lives in `src/site.ts`. Do not fetch it at runtime.
 
-卡片：圆角 14px，`border-title/8`，白底，浅阴影。悬停描边收到 `border-title/16`。说明 `line-clamp-2`，截断是故意的。
+Card facts follow a GitHub pinned card: name, summary, language dot, stars. Hide forks when the count is 0. The visual style follows Lynx choice tabs, not a GitHub widget.
 
-星数：小于 1000 显示整数，否则一位小数加 `k`，去掉末尾 `.0`。
+Card: 14px radius, `border-title/8`, white background, light shadow. Hover border is `border-title/16`. The summary uses `line-clamp-2` on purpose. The taro-ui summary stays in Chinese: 「一款基于 Taro 框架开发的多端 UI 组件库」.
 
-## 技能
+Star counts below 1000 are integers. Otherwise one decimal plus `k`, with a trailing `.0` removed.
 
-顺序：
+## Skills
 
-1. Vue、React、Next
-2. Rolldown、Vite、Oxc
-3. Spring、Redis、RabbitMQ
-4. Nginx、Docker
+Order:
 
-图标 20px，点按区域 36×36，圆角 8px。悬停底 `title` 8%、描边 `title` 12%。点击新标签打开官网。
+1. Vue, React, Next
+2. Rolldown, Vite, Oxc
+3. Spring, Redis, RabbitMQ
+4. Nginx, Docker
 
-悬浮卡出现在图标下方，延迟 150ms，`pointer-events-none`，避免挡住点击。结构是图标、名称、一句说明。说明按各家官网的定义收短，可以两行，文字列宽 `11rem`。Next 的定义是「面向 Web 的 React 框架」，对应官网首页 _The React Framework for the Web_。
+Icons are 20px inside a 36×36 target, radius 8px. Hover fill is `title` at 8%, border `title` at 12%. Click opens the official site in a new tab.
 
-移动端没有悬停，点按直接跳转。不要为了移动端改成常驻卡片或状态面板。
+The tooltip sits below the icon, delay 150ms, `pointer-events-none` so it does not eat the click. Contents are icon, name, and a short description. Descriptions follow each project's own wording and may wrap to two lines. The text column is `11rem`. Next is "The React framework for the web".
 
-品牌匹配在 `src/brands.ts`：全名相等，或标签以「名称 + 空格 / 中文括号」开头。更长的名字必须排在更短的前面，例如 Spring Boot 在 Spring 之前。目录里可以有未展示的品牌，不要因此把它们加回网格。
+Phones have no hover. A tap navigates. Do not replace this with a persistent card or a state panel.
 
-## 联系方式
+Brand matching in `src/brands.ts` is an exact name, or a label that starts with the name plus a space or `（`. Longer names come first, so Spring Boot stays before Spring. The catalog may contain brands that are not on the grid. Do not add them back unless asked.
 
-图标 20px，点按区域 24×24，全部新标签打开。顺序：GitHub、X、Bilibili、掘金、微信。微信链到 `/wechat.jpg`。没有 Bluesky。
+## Contact
 
-电话是掩码 `+86 135****8086`，纯文本，不是 `tel:` 链接。邮箱是 `mailto:`。
+Icons are 20px inside a 24×24 target. Every link opens a new tab. Order: GitHub, X, Bilibili, Juejin, WeChat. WeChat points at `/wechat.jpg`. No Bluesky.
 
-## 博客
+The phone number is masked, `+86 135****8086`, plain text, not a `tel:` link. Email is a `mailto:`.
 
-空状态文案：「文章写在这个站点里。现在还没有篇目。」有文章时，标题 18px，日期和摘要 14px。
+## Blog
 
-## 背景与标记
+Empty state: "Posts live on this site. None yet." When posts exist, titles are 18px and dates and summaries are 14px.
 
-网格画在 `MeteorsBackground` 上。格子固定 120px，边缘余数留着，不把格子撑满视口。画布 `pointer-events-none absolute inset-0`，不要设 `z-index: -1`。`lineWidth` 是 1 CSS 像素：先按设备像素比设置画布尺寸，再 `setTransform(dpr)`。减少动效时只画网格。
+## Background and mark
 
-站点图标是圆角方标上的「永」，字重为朗正粗体，沿品牌渐变（红在右、紫在中、青在左），角是透明的。文件是 `public/favicon.png`，256×256。换这个文件后要重启 `pnpm dev`，Rsbuild 会在启动时快照 `public`。
+The grid is drawn by `MeteorsBackground`. Cell size stays 120px. The remainder at the edge stays. Do not stretch the grid to the viewport. The canvas is `pointer-events-none absolute inset-0`. Do not set `z-index: -1`. `lineWidth` is 1 CSS pixel: set the canvas size by device pixel ratio, then `setTransform(dpr)`. Reduced motion draws the grid only.
 
-## 动效
+The favicon is 永 in Langzheng Bold on the brand gradient (red on the right, purple in the middle, cyan on the left), with transparent corners. File: `public/favicon.png`, 256×256. Restart `pnpm dev` after replacing it. Rsbuild snapshots `public` at startup.
 
-- 默认过渡 180ms，`cubic-bezier(0.16, 1, 0.3, 1)`
-- 慢过渡 420ms，用于出现
-- 减少动效时动画和过渡压到接近 0，滚动改为 `auto`
+## Motion
 
-## 已定边界
+- Default transition 180ms, `cubic-bezier(0.16, 1, 0.3, 1)`
+- Slow transition 420ms, used for reveals
+- Reduced motion collapses animation and transitions toward 0, and scrolling becomes `auto`
 
-- 浅色唯一。
-- 小字强调用 `--color-accent-text`，装饰用 `--color-accent`。
-- 技能说明来自官网定义，彼此不要写成同一句。
-- 开源说明保持两行截断。
-- 技能交互就是悬停出卡片、点击跳转。
-- 网格色保持 `rgba(128, 128, 128, 0.1)`。
+## Settled boundaries
 
-已知限制：技能悬浮卡宽约 234px，比右栏 184px 更宽。1024px 附近和更窄的宽度上，透明度为 0 的卡片仍会把页面撑出横向滚动。改交互方式之前，先处理这个滚动。
+- Light theme only.
+- Small emphasized text uses `--color-accent-text`. Decoration uses `--color-accent`.
+- Skill descriptions come from each project's own definition, and they do not repeat each other.
+- Open-source summaries stay clamped to two lines. The taro-ui summary stays Chinese.
+- Skills are hover tooltip plus click-through.
+- The grid color stays `rgba(128, 128, 128, 0.1)`.
+- Visible copy is English. 贺永琪 stays Chinese. Bilibili and Juejin labels stay the account names.
+
+Known limit: skill tooltips are about 234px wide, wider than the 184px right column. Around 1024px and below, a tooltip at opacity 0 still stretches the page into horizontal scroll. Fix that scroll before changing the interaction.

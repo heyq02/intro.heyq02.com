@@ -39,17 +39,17 @@ export const marks = [
 ];
 
 export const markSummary: Record<string, string> = {
-  Vue: '渐进式 JavaScript 框架，用来构建 Web 界面',
-  React: '构建 Web 和原生用户界面的库',
-  Next: '面向 Web 的 React 框架',
-  Rolldown: '基于 Rust 的 JavaScript 打包器，API 兼容 Rollup',
-  Vite: '用来构建 Web 应用的前端构建工具',
-  Oxc: '用 Rust 编写的高性能 JavaScript 工具集',
-  Spring: '用来创建 Java 企业级应用',
-  Redis: '内存数据存储，可用作数据库、缓存和消息代理',
-  RabbitMQ: '开源的消息与流代理',
-  Nginx: 'HTTP 服务器、反向代理和负载均衡',
-  Docker: '开发、交付和运行应用的开放平台',
+  Vue: 'Progressive JavaScript framework for building web UIs',
+  React: 'The library for web and native user interfaces',
+  Next: 'The React framework for the web',
+  Rolldown: 'Rust-based JavaScript bundler with a Rollup-compatible API',
+  Vite: 'Frontend build tool for the web',
+  Oxc: 'High-performance JavaScript tools written in Rust',
+  Spring: 'Framework for creating Java enterprise applications',
+  Redis: 'In-memory store for databases, cache, and messaging',
+  RabbitMQ: 'Open-source messaging and streaming broker',
+  Nginx: 'HTTP server, reverse proxy, and load balancer',
+  Docker: 'Open platform for building, shipping, and running apps',
 };
 
 export const projects: Project[] = [
@@ -75,14 +75,14 @@ export const projects: Project[] = [
 
 export const experiences: Experience[] = [
   {
-    company: '北京京东世纪贸易有限公司',
+    company: 'Beijing Jingdong Century Trading Co., Ltd.',
     href: 'https://www.jd.com/',
     start: '2024.06',
-    end: '至今',
+    end: 'Present',
     points: [
-      '负责京东外卖跨端小程序&H5、管理后台需求迭代',
-      '进行管理后台老旧架构升级，TP95性能优化',
-      '本地生活产研C3层面 AI Infra 建设，提升研发效能',
+      'Owned iterations for JD Takeout across the mini program, H5, and admin console',
+      'Upgraded the admin console off its legacy architecture and improved TP95',
+      'Built C3-level AI Infra for Local Life product and engineering, improving R&D efficiency',
     ],
   },
 ];
@@ -115,6 +115,6 @@ export const places: Place[] = [
   {
     label: 'WeChat',
     href: '/wechat.jpg',
-    detail: '扫码添加',
+    detail: 'Scan to add',
   },
 ];

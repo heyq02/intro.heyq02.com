@@ -15,8 +15,8 @@ import {
   projects,
 } from '../site';
 
-const names = ['永琪', 'Ari'] as const;
-const nameSuffix = '，全栈研发';
+const names = ['贺永琪', 'Ari He'] as const;
+const nameSuffix = 'Full-stack Engineer';
 const typeDelay = 140;
 const deleteDelay = 100;
 const holdDelay = 2000;
@@ -67,22 +67,26 @@ function TypedName() {
 
   if (reduce !== false) {
     return (
-      <h1 className="text-h1 font-medium whitespace-nowrap">
-        <span className="brand-text">永琪（Ari）</span>
-        <span className="text-title">{nameSuffix}</span>
+      <h1 className="text-h1 font-medium">
+        <span className="brand-text">贺永琪 (Ari He)</span>
+        <span className="mt-1 block text-lg leading-6 text-title">
+          {nameSuffix}
+        </span>
       </h1>
     );
   }
 
   return (
     <h1
-      aria-label={`永琪（Ari）${nameSuffix}`}
-      className="text-h1 font-medium whitespace-nowrap"
+      aria-label={`贺永琪 (Ari He), ${nameSuffix}`}
+      className="text-h1 font-medium"
     >
       <span aria-hidden="true" className="brand-text name-caret">
         {text || '\u200b'}
       </span>
-      <span className="text-title">{nameSuffix}</span>
+      <span className="mt-1 block text-lg leading-6 text-title">
+        {nameSuffix}
+      </span>
     </h1>
   );
 }
@@ -171,8 +175,9 @@ export function Home() {
           </div>
           <TypedName />
           <p className="mt-5 text-base leading-7 text-pretty">
-            南京邮电大学生物医学工程本科毕业。专注前端工程化，推动 AI
-            在业务场景中落地。
+            B.E. in Biomedical Engineering, Nanjing University of Posts and
+            Telecommunications. Focused on frontend engineering, and on putting
+            AI to work in real products.
           </p>
           <ul className="mt-5 flex flex-wrap items-center gap-4">
             {places.map((place) => {
@@ -215,14 +220,14 @@ export function Home() {
         </header>
 
         <section aria-labelledby="work-heading">
-          <SectionHeading id="work-heading" title="经历" />
+          <SectionHeading id="work-heading" title="Experience" />
           <ul>
             {experiences.map((job) => (
               <li
                 className="py-3 first:pt-0 last:pb-0"
                 key={`${job.company}-${job.start}`}
               >
-                <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
+                <div className="flex flex-col gap-0.5 sm:flex-row sm:items-start sm:justify-between sm:gap-3">
                   <h3 className="min-w-0 text-lg leading-6 font-medium">
                     <a
                       className="min-w-0 transition-colors hover:text-accent-text"
@@ -248,7 +253,7 @@ export function Home() {
         </section>
 
         <section aria-labelledby="skills-heading">
-          <SectionHeading id="skills-heading" title="技能" />
+          <SectionHeading id="skills-heading" title="Skills" />
           <ul className="grid grid-cols-3 gap-x-2 gap-y-4">
             {marks.map((mark) => {
               const brand = brandOf(mark);
@@ -263,7 +268,7 @@ export function Home() {
                     <a
                       aria-label={
                         markSummary[mark]
-                          ? `${mark}，${markSummary[mark]}`
+                          ? `${mark}, ${markSummary[mark]}`
                           : mark
                       }
                       className="group relative z-0 inline-flex size-9 items-center justify-center rounded-lg border border-transparent transition-[background-color,border-color] duration-150 ease-out hover:z-10 hover:border-title/12 hover:bg-title/8 focus-visible:z-10"
@@ -303,7 +308,7 @@ export function Home() {
           aria-labelledby="code-heading"
           className="lg:col-span-2 lg:col-start-2"
         >
-          <SectionHeading id="code-heading" title="开源" />
+          <SectionHeading id="code-heading" title="Open source" />
           <ul className="grid gap-3.5 sm:grid-cols-2">
             {projects.map((project) => (
               <li className="min-w-0" key={project.name}>

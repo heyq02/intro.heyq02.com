@@ -8,10 +8,10 @@ export function BlogPage() {
     <Page page="blog">
       <Reveal>
         <section aria-labelledby="blog-heading">
-          <SectionHeading id="blog-heading" title="博客" />
+          <SectionHeading id="blog-heading" title="Blog" />
           {posts.length === 0 ? (
             <p className="text-base leading-7 text-muted">
-              文章写在这个站点里。现在还没有篇目。
+              Posts live on this site. None yet.
             </p>
           ) : (
             <div>
