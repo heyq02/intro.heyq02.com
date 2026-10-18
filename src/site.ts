@@ -87,10 +87,6 @@ export const experiences: Experience[] = [
   },
 ];
 
-export const phone = '+86 135****8086';
-
-export const email = 'hello@heyq02.com';
-
 export const places: Place[] = [
   {
     label: 'GitHub',

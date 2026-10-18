@@ -6,11 +6,9 @@ import { SectionHeading } from '../components/SectionHeading';
 import { Page } from '../layout';
 import {
   avatar,
-  email,
   experiences,
   marks,
   markSummary,
-  phone,
   places,
   projects,
 } from '../site';
@@ -111,19 +109,6 @@ function CityIcon() {
   );
 }
 
-function PhoneIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      className="size-4 shrink-0"
-      fill="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path d="M6.62 10.79a15.1 15.1 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.4 11.4 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.57 1 1 0 0 1-.25 1.02z" />
-    </svg>
-  );
-}
-
 function formatCount(count: number) {
   if (count < 1000) {
     return String(count);
@@ -154,19 +139,6 @@ function ForkIcon() {
       viewBox="0 0 16 16"
     >
       <path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.5.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z" />
-    </svg>
-  );
-}
-
-function MailIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      className="size-4 shrink-0"
-      fill="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
     </svg>
   );
 }
@@ -229,21 +201,6 @@ export function Home() {
                 </li>
               );
             })}
-          </ul>
-          <ul className="mt-4 grid gap-2 text-sm">
-            <li className="flex items-center gap-2">
-              <PhoneIcon />
-              <span>{phone}</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <MailIcon />
-              <a
-                className="break-all transition-colors hover:text-accent-text"
-                href={`mailto:${email}`}
-              >
-                {email}
-              </a>
-            </li>
           </ul>
         </header>
 

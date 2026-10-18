@@ -62,7 +62,7 @@ One scale. Card titles match the company name. Descriptions match meta text.
 
 From `lg` (1024px): `13.5rem`, a flexible middle column, `11.5rem`. Column gap 48px, row gap 40px. Below that, one column with 32px gaps.
 
-- Left: avatar, name, bio, social, phone, email. Keep this column at `13.5rem`.
+- Left: avatar, name, bio, social. Keep this column at `13.5rem`.
 - Middle: experience. Open source starts in the middle column and spans the right column too.
 - Right: skills, a 3-column icon grid.
 
@@ -116,8 +116,6 @@ Brand matching in `src/brands.ts` is an exact name, or a label that starts with 
 ## Contact
 
 Icons are 20px inside a 24×24 target. Every link opens a new tab. Order: GitHub, X, Bilibili, Juejin, WeChat. WeChat points at `/wechat.jpg`. No Bluesky.
-
-The phone number is masked, `+86 135****8086`, plain text, not a `tel:` link. Email is a `mailto:`.
 
 ## Blog
 
