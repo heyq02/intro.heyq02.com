@@ -115,7 +115,7 @@ Brand matching in `src/brands.ts` is an exact name, or a label that starts with 
 
 ## Contact
 
-Icons are 20px inside a 24×24 target. Every link opens a new tab. Order: GitHub, X, Bilibili, Juejin, WeChat. WeChat points at `/wechat.jpg`. No Bluesky.
+Icons are 20px inside a 24×24 target. Every link opens a new tab. Order: GitHub, Bluesky, Bilibili, Juejin, WeChat. WeChat points at `/wechat.jpg`. Bluesky points at `https://bsky.app/profile/heyq02.com`.
 
 ## Blog
 

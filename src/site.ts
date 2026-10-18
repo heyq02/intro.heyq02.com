@@ -94,9 +94,9 @@ export const places: Place[] = [
     detail: 'heyq02',
   },
   {
-    label: 'X',
-    href: 'https://x.com/heyq02',
-    detail: '@heyq02',
+    label: 'Bluesky',
+    href: 'https://bsky.app/profile/heyq02.com',
+    detail: 'heyq02.com',
   },
   {
     label: 'Bilibili',

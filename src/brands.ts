@@ -2,6 +2,7 @@ import type { SimpleIcon } from 'simple-icons';
 import {
   siApachemaven,
   siBilibili,
+  siBluesky,
   siClaude,
   siCss,
   siCursor,
@@ -39,7 +40,6 @@ import {
   siVuedotjs,
   siWebpack,
   siWechat,
-  siX,
 } from 'simple-icons';
 
 const brands: { name: string; href: string; icon?: SimpleIcon }[] = [
@@ -113,7 +113,7 @@ const brands: { name: string; href: string; icon?: SimpleIcon }[] = [
   { name: 'Cursor', href: 'https://cursor.com/', icon: siCursor },
   { name: 'DeepSeek', href: 'https://www.deepseek.com/', icon: siDeepseek },
   { name: 'Claude', href: 'https://claude.ai/', icon: siClaude },
-  { name: 'X', href: 'https://x.com/', icon: siX },
+  { name: 'Bluesky', href: 'https://bsky.app/', icon: siBluesky },
   { name: 'WeChat', href: 'https://weixin.qq.com/', icon: siWechat },
   { name: 'Bilibili', href: 'https://www.bilibili.com/', icon: siBilibili },
   { name: 'Juejin', href: 'https://juejin.cn/', icon: siJuejin },
