@@ -78,7 +78,7 @@ Gradient direction is 270deg: accent, glow, cyan, glow, accent.
 
 With `prefers-reduced-motion`, show `Ari He` and no caret. `aria-label` is `Ari He`. `useReducedMotion()` animates only when it returns `false`.
 
-Under the name, degree and city sit on one meta line: a cap icon with `Bachelor`, then a pin icon with `China`. The sentence under that line reads “Full-stack engineer / open-source enthusiast / blogger on weight loss, career, and travel. Focused on AI that speeds up development and ships in real products.” Middle dots separate the blog topics, and the kaomoji `(๑•̀ㅂ•́)و` closes the line. The kaomoji is `aria-hidden` and `whitespace-nowrap` so `word-break: break-all` does not split it. Other words split anywhere inside the 13.5rem column.
+Under the name, degree and city sit on one meta line: a cap icon with `Bachelor`, then a pin icon with `China`. The sentence under that line reads “Full-stack engineer / open-source enthusiast / vlogger on career. Focused on AI that speeds up development and ships in real products.” The kaomoji `(๑•̀ㅂ•́)و` closes the line. The kaomoji is `aria-hidden` and `whitespace-nowrap` so `word-break: break-all` does not split it. Other words split anywhere inside the 13.5rem column.
 
 ## Experience
 

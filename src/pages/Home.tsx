@@ -201,9 +201,8 @@ export function Home() {
             </li>
           </ul>
           <p className="mt-3 text-base leading-7 break-all">
-            Full-stack engineer / open-source enthusiast / blogger on weight
-            loss · career · travel. Focused on AI that speeds up development and
-            ships in real products{' '}
+            Full-stack engineer / open-source enthusiast / vlogger on career.
+            Focused on AI that speeds up development and ships in real products{' '}
             <span aria-hidden="true" className="whitespace-nowrap">
               (๑•̀ㅂ•́)و
             </span>
