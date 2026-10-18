@@ -175,8 +175,7 @@ export function Home() {
           </div>
           <TypedName />
           <p className="mt-5 text-base leading-7 text-pretty">
-            B.E. in Biomedical Engineering, Nanjing University of Posts and
-            Telecommunications. Focused on frontend engineering, and on putting
+            B.E. in BME, NJUPT. Focused on frontend engineering, and on putting
             AI to work in real products.
           </p>
           <ul className="mt-5 flex flex-wrap items-center gap-4">

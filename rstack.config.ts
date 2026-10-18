@@ -6,7 +6,7 @@ const pages = {
   index: {
     title: '贺永琪 (Ari He)',
     description:
-      '贺永琪 (Ari He), full-stack engineer. B.E. in Biomedical Engineering from Nanjing University of Posts and Telecommunications, focused on frontend engineering and AI in production.',
+      '贺永琪 (Ari He), full-stack engineer. B.E. in BME from NJUPT, focused on frontend engineering and AI in production.',
   },
   blog: {
     title: 'Blog · 贺永琪 (Ari He)',
