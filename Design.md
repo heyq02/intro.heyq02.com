@@ -92,7 +92,7 @@ Only the two pinned GitHub repos: `jd-opensource/taro-ui` and `heyq02/simpleicon
 
 Card facts follow a GitHub pinned card: name, summary, language dot, stars. Hide forks when the count is 0. The visual style follows Lynx choice tabs, not a GitHub widget.
 
-Card: 14px radius, `border-title/8`, white background, light shadow. Hover border is `border-title/16`. The summary uses `line-clamp-2` on purpose. The taro-ui summary stays in Chinese: 「一款基于 Taro 框架开发的多端 UI 组件库」.
+Card: 14px radius, `border-title/8`, white background, light shadow. Hover border is `border-title/16`. The summary uses `line-clamp-2` and stays two lines tall, so the language and counts line up across cards. The taro-ui summary stays in Chinese: 「一款基于 Taro 框架开发的多端 UI 组件库」.
 
 Star counts below 1000 are integers. Otherwise one decimal plus `k`, with a trailing `.0` removed.
 

@@ -323,7 +323,7 @@ export function Home() {
                   >
                     {project.name}
                   </span>
-                  <span className="mt-2 line-clamp-2 text-sm leading-6 text-muted">
+                  <span className="mt-2 line-clamp-2 min-h-12 text-sm leading-6 text-muted">
                     {project.summary}
                   </span>
                   <span className="mt-2 flex items-center gap-3 text-sm text-muted">
