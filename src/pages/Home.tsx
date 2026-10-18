@@ -179,7 +179,7 @@ export function Home() {
                 aria-hidden="true"
                 className="flex size-7 shrink-0 items-center justify-center"
               >
-                ✨
+                🤖
               </span>
               <span>AI in real products</span>
             </li>

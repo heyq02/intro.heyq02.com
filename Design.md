@@ -78,7 +78,7 @@ Gradient direction is 270deg: accent, glow, cyan, glow, accent.
 
 With `prefers-reduced-motion`, show `Ari He` and no caret. `aria-label` is `Ari He`. `useReducedMotion()` animates only when it returns `false`.
 
-The intro under the name is a vertical list. Each row is a 28px emoji and one line: modern frontend, then AI in real products.
+The intro under the name is a vertical list. Each row is a 28px emoji and one line: a laptop for modern frontend, then a robot for AI in real products.
 
 ## Experience
 
