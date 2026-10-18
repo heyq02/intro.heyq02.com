@@ -5,7 +5,8 @@ import { rstack } from '@heyq02/rstack-config/rstack';
 const pages = {
   index: {
     title: 'Ari He',
-    description: 'Ari He, developer. Modern frontend, and AI in real products.',
+    description:
+      'Ari He. Full-stack engineer, open-source enthusiast, and blogger on weight loss, career, and travel. Focused on AI that speeds up development and ships in real products.',
   },
   blog: {
     title: 'Blog · Ari He',

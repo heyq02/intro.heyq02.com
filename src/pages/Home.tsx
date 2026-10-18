@@ -85,6 +85,32 @@ function markAbbr(mark: string) {
   return mark.slice(0, 2);
 }
 
+function DegreeIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      className="size-4 shrink-0"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path d="M5 13.18v4L12 21l7-3.82v-4L12 17zM12 3 1 9l11 6 9-4.91V17h2V9z" />
+    </svg>
+  );
+}
+
+function CityIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      className="size-4 shrink-0"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7m0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5" />
+    </svg>
+  );
+}
+
 function PhoneIcon() {
   return (
     <svg
@@ -164,26 +190,24 @@ export function Home() {
             />
           </div>
           <TypedName />
-          <ul className="mt-5 grid gap-1">
-            <li className="flex items-start gap-2 text-base leading-7">
-              <span
-                aria-hidden="true"
-                className="flex size-7 shrink-0 items-center justify-center"
-              >
-                💻
-              </span>
-              <span>Modern frontend</span>
+          <ul className="mt-5 flex flex-nowrap items-center gap-x-3 text-sm leading-6">
+            <li className="flex items-center gap-1.5">
+              <DegreeIcon />
+              <span>Bachelor</span>
             </li>
-            <li className="flex items-start gap-2 text-base leading-7">
-              <span
-                aria-hidden="true"
-                className="flex size-7 shrink-0 items-center justify-center"
-              >
-                🤖
-              </span>
-              <span>AI in real products</span>
+            <li className="flex items-center gap-1.5">
+              <CityIcon />
+              <span>China</span>
             </li>
           </ul>
+          <p className="mt-3 text-base leading-7 break-all">
+            Full-stack engineer / open-source enthusiast / blogger on weight
+            loss · career · travel. Focused on AI that speeds up development and
+            ships in real products{' '}
+            <span aria-hidden="true" className="whitespace-nowrap">
+              (๑•̀ㅂ•́)و
+            </span>
+          </p>
           <ul className="mt-5 flex flex-wrap items-center gap-4">
             {places.map((place) => {
               const icon = brandIcon(place.label);

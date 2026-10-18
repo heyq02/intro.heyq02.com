@@ -52,7 +52,7 @@ One scale. Card titles match the company name. Descriptions match meta text.
 | Name                                          | 32px (`--text-h1`), medium weight                         |
 | Section title                                 | 22px / 1.3, medium weight, 1px `--color-accent` underline |
 | Company, repo name                            | 18px / 24px, medium weight                                |
-| Bio                                           | 16px / 28px, emoji plus one line                          |
+| Bio                                           | 16px / 28px, one sentence                                 |
 | Experience points, dates, repo summary, stars | 14px / 24px, `--color-muted`                              |
 | Tooltip title                                 | 14px / 20px, medium weight                                |
 | Tooltip description                           | 12px / 16px, `--color-muted`, may wrap to two lines       |
@@ -78,7 +78,7 @@ Gradient direction is 270deg: accent, glow, cyan, glow, accent.
 
 With `prefers-reduced-motion`, show `Ari He` and no caret. `aria-label` is `Ari He`. `useReducedMotion()` animates only when it returns `false`.
 
-The intro under the name is a vertical list. Each row is a 28px emoji and one line: a laptop for modern frontend, then a robot for AI in real products.
+Under the name, degree and city sit on one meta line: a cap icon with `Bachelor`, then a pin icon with `China`. The sentence under that line reads “Full-stack engineer / open-source enthusiast / blogger on weight loss, career, and travel. Focused on AI that speeds up development and ships in real products.” Middle dots separate the blog topics, and the kaomoji `(๑•̀ㅂ•́)و` closes the line. The kaomoji is `aria-hidden` and `whitespace-nowrap` so `word-break: break-all` does not split it. Other words split anywhere inside the 13.5rem column.
 
 ## Experience
 
