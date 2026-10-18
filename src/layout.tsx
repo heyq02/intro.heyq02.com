@@ -47,7 +47,7 @@ export function Page({
                   className="text-sm font-medium text-title transition-colors hover:text-accent-text"
                   href="/"
                 >
-                  贺永琪 (Ari He)
+                  Ari He
                 </a>
               )}
               <m.nav

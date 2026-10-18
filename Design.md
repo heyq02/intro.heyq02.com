@@ -52,7 +52,7 @@ One scale. Card titles match the company name. Descriptions match meta text.
 | Name                                          | 32px (`--text-h1`), medium weight                         |
 | Section title                                 | 22px / 1.3, medium weight, 1px `--color-accent` underline |
 | Company, repo name                            | 18px / 24px, medium weight                                |
-| Bio                                           | 16px / 28px                                               |
+| Bio                                           | 16px / 28px, emoji plus one line                          |
 | Experience points, dates, repo summary, stars | 14px / 24px, `--color-muted`                              |
 | Tooltip title                                 | 14px / 20px, medium weight                                |
 | Tooltip description                           | 12px / 16px, `--color-muted`, may wrap to two lines       |
@@ -68,17 +68,17 @@ From `lg` (1024px): `13.5rem`, a flexible middle column, `11.5rem`. Column gap 4
 
 Avatar is 112px, 128px from `sm`, circular, 4px white ring, with a `--color-meteor-head` glow at 20% behind it.
 
-The English role does not fit beside the name in the `13.5rem` column, so it sits on the next line at 18px. The accessible name keeps the comma: `贺永琪 (Ari He), Full-stack Engineer`.
-
 ## Name
 
-The visible Chinese name is 贺永琪. Page titles and the blog header link use `贺永琪 (Ari He)`. Bilibili (`全栈糕手Ari`) and Juejin (`编程糕手Ari`) stay as the account names.
+The name is Ari He. Page titles and the blog header link use `Ari He`. Bilibili (`全栈糕手Ari`) and Juejin (`编程糕手Ari`) stay as the account names.
 
-Typing starts empty, types 贺永琪, holds 2s, deletes, types Ari He, holds 2s, deletes, and loops. Typing is 140ms, deleting is 100ms. Only the typed name gets the gradient and the caret. The static line under it is `Full-stack Engineer` in `--color-title`.
+Typing starts empty, types Ari He, holds 2s, deletes, types Developer, holds 2s, deletes, and loops. Typing is 140ms, deleting is 100ms. The typed text gets the gradient and the caret. There is no subtitle under the name.
 
 Gradient direction is 270deg: accent, glow, cyan, glow, accent.
 
-With `prefers-reduced-motion`, show `贺永琪 (Ari He), Full-stack Engineer` and no caret. `aria-label` is always the full name. `useReducedMotion()` animates only when it returns `false`.
+With `prefers-reduced-motion`, show `Ari He` and no caret. `aria-label` is `Ari He`. `useReducedMotion()` animates only when it returns `false`.
+
+The intro under the name is a vertical list. Each row is a 28px emoji and one line: modern frontend, then AI in real products.
 
 ## Experience
 
@@ -143,6 +143,6 @@ The favicon is 永 in Langzheng Bold on the brand gradient (red on the right, pu
 - Open-source summaries stay clamped to two lines. The taro-ui summary stays Chinese.
 - Skills are hover tooltip plus click-through.
 - The grid color stays `rgba(128, 128, 128, 0.1)`.
-- Visible copy is English. 贺永琪 stays Chinese. Bilibili and Juejin labels stay the account names.
+- Visible copy is English. Bilibili and Juejin labels stay the account names.
 
 Known limit: skill tooltips are about 234px wide, wider than the 184px right column. Around 1024px and below, a tooltip at opacity 0 still stretches the page into horizontal scroll. Fix that scroll before changing the interaction.

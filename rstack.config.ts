@@ -4,13 +4,12 @@ import { rstack } from '@heyq02/rstack-config/rstack';
 
 const pages = {
   index: {
-    title: '贺永琪 (Ari He)',
-    description:
-      '贺永琪 (Ari He), full-stack engineer. B.E. in BME from NJUPT, focused on frontend engineering and AI in production.',
+    title: 'Ari He',
+    description: 'Ari He, developer. Modern frontend, and AI in real products.',
   },
   blog: {
-    title: 'Blog · 贺永琪 (Ari He)',
-    description: 'Blog of 贺永琪 (Ari He).',
+    title: 'Blog · Ari He',
+    description: 'Blog of Ari He.',
   },
 } as const;
 

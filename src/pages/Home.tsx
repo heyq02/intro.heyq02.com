@@ -15,8 +15,7 @@ import {
   projects,
 } from '../site';
 
-const names = ['贺永琪', 'Ari He'] as const;
-const nameSuffix = 'Full-stack Engineer';
+const names = ['Ari He', 'Developer'] as const;
 const typeDelay = 140;
 const deleteDelay = 100;
 const holdDelay = 2000;
@@ -67,25 +66,16 @@ function TypedName() {
 
   if (reduce !== false) {
     return (
-      <h1 className="text-h1 font-medium">
-        <span className="brand-text">贺永琪 (Ari He)</span>
-        <span className="mt-1 block text-lg leading-6 text-title">
-          {nameSuffix}
-        </span>
+      <h1 className="text-h1 font-medium whitespace-nowrap">
+        <span className="brand-text">Ari He</span>
       </h1>
     );
   }
 
   return (
-    <h1
-      aria-label={`贺永琪 (Ari He), ${nameSuffix}`}
-      className="text-h1 font-medium"
-    >
+    <h1 aria-label="Ari He" className="text-h1 font-medium whitespace-nowrap">
       <span aria-hidden="true" className="brand-text name-caret">
         {text || '\u200b'}
-      </span>
-      <span className="mt-1 block text-lg leading-6 text-title">
-        {nameSuffix}
       </span>
     </h1>
   );
@@ -174,10 +164,26 @@ export function Home() {
             />
           </div>
           <TypedName />
-          <p className="mt-5 text-base leading-7 text-pretty">
-            B.E. in BME, NJUPT. Focused on frontend engineering, and on putting
-            AI to work in real products.
-          </p>
+          <ul className="mt-5 grid gap-1">
+            <li className="flex items-start gap-2 text-base leading-7">
+              <span
+                aria-hidden="true"
+                className="flex size-7 shrink-0 items-center justify-center"
+              >
+                💻
+              </span>
+              <span>Modern frontend</span>
+            </li>
+            <li className="flex items-start gap-2 text-base leading-7">
+              <span
+                aria-hidden="true"
+                className="flex size-7 shrink-0 items-center justify-center"
+              >
+                ✨
+              </span>
+              <span>AI in real products</span>
+            </li>
+          </ul>
           <ul className="mt-5 flex flex-wrap items-center gap-4">
             {places.map((place) => {
               const icon = brandIcon(place.label);
