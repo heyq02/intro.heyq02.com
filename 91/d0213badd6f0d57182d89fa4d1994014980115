@@ -1,0 +1,21 @@
+Design.md
+  s_f512d4c4dd19ee::t_300d8837e152fd 128
+index.html
+  s_f512d4c4dd19ee::t_8cd94abf267958 7-8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "91d0213badd6f0d57182d89fa4d1994014980115",
+  "prompts": {},
+  "sessions": {
+    "s_f512d4c4dd19ee": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "28cac4e4-1a78-4506-ae4b-82e05b492490",
+        "model": "unknown"
+      },
+      "human_author": "heyongqi10 <heyongqi10@jd.com>"
+    }
+  }
+}
