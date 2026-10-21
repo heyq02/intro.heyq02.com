@@ -125,7 +125,7 @@ Empty state: "Posts live on this site. None yet." When posts exist, titles are 1
 
 The grid is drawn by `MeteorsBackground`. Cell size stays 120px. The remainder at the edge stays. Do not stretch the grid to the viewport. The canvas is `pointer-events-none absolute inset-0`. Do not set `z-index: -1`. `lineWidth` is 1 CSS pixel: set the canvas size by device pixel ratio, then `setTransform(dpr)`. Reduced motion draws the grid only.
 
-The favicon is the signature from [heyq02/static `signature/base-transparent-bg.png`](https://github.com/heyq02/static/blob/main/signature/base-transparent-bg.png), fitted to a square on white. Files: `public/favicon.ico` and `public/favicon.png` (256×256). Restart `pnpm dev` after replacing them. Rsbuild snapshots `public` at startup.
+The favicon is the signature from [heyq02/static `signature/base-transparent-bg.png`](https://github.com/heyq02/static/blob/main/signature/base-transparent-bg.png), fitted to a square with a transparent background. Files: `public/favicon.ico` and `public/favicon.png` (256×256). Restart `pnpm dev` after replacing them. Rsbuild snapshots `public` at startup.
 
 ## Motion
 
