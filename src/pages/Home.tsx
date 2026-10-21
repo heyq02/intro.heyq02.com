@@ -145,7 +145,7 @@ function ForkIcon() {
 
 export function Home() {
   return (
-    <Page kicker="PROFILE" page="home">
+    <Page page="home">
       <div className="grid items-start gap-8 lg:grid-cols-[13.5rem_minmax(0,1fr)_11.5rem] lg:gap-x-12 lg:gap-y-10">
         <header className="lg:row-span-2">
           <div className="relative mb-5 w-fit">

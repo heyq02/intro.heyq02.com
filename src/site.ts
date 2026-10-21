@@ -24,6 +24,10 @@ export interface Experience {
 
 export const avatar = 'https://avatars.githubusercontent.com/u/206218794?v=4';
 
+// Handwritten mark copied from heyq02/static signature/base-transparent-bg.png.
+// https://github.com/heyq02/static
+export const signature = '/signature.png';
+
 export const marks = [
   'Vue',
   'React',

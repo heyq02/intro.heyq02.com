@@ -56,7 +56,8 @@ One scale. Card titles match the company name. Descriptions match meta text.
 | Experience points, dates, repo summary, stars | 14px / 24px, `--color-muted`                              |
 | Tooltip title                                 | 14px / 20px, medium weight                                |
 | Tooltip description                           | 12px / 16px, `--color-muted`, may wrap to two lines       |
-| Kicker, nav                                   | 14px                                                      |
+| Logo                                          | 40px tall signature                                       |
+| Nav                                           | 14px                                                      |
 
 ## Layout
 
@@ -70,7 +71,7 @@ Avatar is 112px, 128px from `sm`, circular, 4px white ring, with a `--color-mete
 
 ## Name
 
-The name is Ari He. Page titles and the blog header link use `Ari He`. Bilibili (`全栈糕手Ari`) and Juejin (`编程糕手Ari`) stay as the account names.
+The name is Ari He. Page titles use `Ari He`. Bilibili (`全栈糕手Ari`) and Juejin (`编程糕手Ari`) stay as the account names.
 
 Typing starts empty, types Ari He, holds 2s, deletes, types Developer, holds 2s, deletes, and loops. Typing is 140ms, deleting is 100ms. The typed text gets the gradient and the caret. There is no subtitle under the name.
 
@@ -120,6 +121,10 @@ Icons are 20px inside a 24×24 target. Every link opens a new tab. Order: GitHub
 ## Blog
 
 Empty state: "Posts live on this site. None yet." When posts exist, titles are 18px and dates and summaries are 14px.
+
+## Logo
+
+The header mark on every page is the handwritten signature, and it links to `/`. It replaces the PROFILE kicker and the text link that said Ari He. The image is `signature/base-transparent-bg.png` from [heyq02/static](https://github.com/heyq02/static), copied to `public/signature.png`. The file is 1536×1024. The ink sits at x 390–1159, y 339–681. The header crops to that ink plus 16px of the file's padding (x 374–1175, y 323–697) and shows it 40px tall. `alt` is `Ari He`.
 
 ## Background and mark
 

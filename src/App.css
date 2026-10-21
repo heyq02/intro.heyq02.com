@@ -64,6 +64,29 @@
   }
 }
 
+/* signature.png is 1536×1024. Ink is x 390–1159, y 339–681.
+   Show that ink plus 16px of the file's padding: x 374–1175, y 323–697. */
+.site-logo {
+  display: block;
+  height: 2.5rem;
+  aspect-ratio: 801 / 374;
+}
+
+.site-logo-frame {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+}
+
+.site-logo img {
+  display: block;
+  width: calc(100% * 1536 / 801);
+  max-width: none;
+  height: auto;
+  margin-left: calc(100% * -374 / 801);
+  margin-top: calc(100% * -323 / 801);
+}
+
 .brand-text {
   background-image: linear-gradient(
     270deg,

@@ -8,6 +8,7 @@ import {
 import type { ReactNode } from 'react';
 import { MeteorsBackground } from './components/MeteorsBackground';
 import { easeOutQuart, hoverDuration } from './motion';
+import { signature } from './site';
 
 export type SitePage = 'home' | 'blog';
 
@@ -19,11 +20,9 @@ const links: { id: SitePage; href: string; label: string }[] = [
 export function Page({
   page,
   children,
-  kicker,
 }: {
   page: SitePage;
   children: ReactNode;
-  kicker?: string;
 }) {
   const reduce = useReducedMotion();
 
@@ -40,16 +39,19 @@ export function Page({
               Skip to content
             </a>
             <div className="mb-8 flex min-h-nav items-center justify-between">
-              {kicker ? (
-                <p className="text-sm font-medium text-title">{kicker}</p>
-              ) : (
-                <a
-                  className="text-sm font-medium text-title transition-colors hover:text-accent-text"
-                  href="/"
-                >
-                  Ari He
-                </a>
-              )}
+              <a
+                className="site-logo shrink-0 transition-opacity hover:opacity-70"
+                href="/"
+              >
+                <span className="site-logo-frame">
+                  <img
+                    alt="Ari He"
+                    height={1024}
+                    src={signature}
+                    width={1536}
+                  />
+                </span>
+              </a>
               <m.nav
                 animate={{ opacity: 1 }}
                 aria-label="Site"
