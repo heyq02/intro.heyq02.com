@@ -1,0 +1,19 @@
+Design.md
+  s_1fbf545373a682::t_342c993e293bde 128
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "ddb56d5b7274f52253d71a0d60d3a18ad2b223cf",
+  "prompts": {},
+  "sessions": {
+    "s_1fbf545373a682": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "4d5e21d0-348e-42b3-8252-7ff2291c540e",
+        "model": "unknown"
+      },
+      "human_author": "heyongqi10 <heyongqi10@jd.com>"
+    }
+  }
+}
